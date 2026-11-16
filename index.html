@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云鹿智能门 × 暮森门窗（深圳店）</title>
+<meta name="description" content="云鹿智能门 × 暮森门窗深圳店，智能门、装甲门、室内木门、玻璃推拉门、系统封窗，多品牌一站式选购，免费上门测量，服务深圳、香港及广东地区。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ tokens (TATA-style UI) ============ */
+:root {
+  --paper: #ffffff;          /* page bg */
+  --paper-raise: #f7f7f7;    /* raised / soft bg */
+  --ink: #222222;            /* primary text */
+  --ink-soft: #808080;       /* secondary text */
+  --brass: #d7000f;          /* accent red */
+  --brass-deep: #a50a14;     /* accent red deep */
+  --line: #ececec;
+  --line-strong: #d9d9d9;
+  --sky: #b8cdd4;
+  --dark: #1a1a1a;           /* dark bands / footer */
+  --sans: "Jost", "Noto Sans SC", "Noto Sans TC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --maxw: 1240px;
+  --shadow: 0 6px 24px rgba(0, 0, 0, .07);
+  --shadow-lift: 0 14px 38px rgba(0, 0, 0, .12);
+}
+html[data-lang="zh-TW"] {
+  --sans: "Jost", "Noto Sans TC", "Noto Sans SC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-weight: 500; line-height: 1.3; letter-spacing: .02em; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ============ buttons ============ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4em;
+  padding: .78em 2em;
+  font-size: .92rem; font-weight: 500; letter-spacing: .08em;
+  border: 1px solid var(--ink);
+  background: transparent; color: var(--ink);
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+.btn-brass { background: var(--brass); border-color: var(--brass); color: #fff; }
+.btn-brass:hover { background: var(--brass-deep); border-color: var(--brass-deep); }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink:hover { background: var(--brass); border-color: var(--brass); }
+.btn-ghost { border-color: var(--line-strong); }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-ghost-light { border-color: rgba(255,255,255,.55); color: #fff; }
+.btn-ghost-light:hover { background: rgba(255,255,255,.14); }
+.btn.wide { width: 100%; }
+
+/* ============ promise strip ============ */
+.promise-strip {
+  display: flex; justify-content: center; gap: clamp(1.2rem, 4vw, 3.5rem);
+  padding: .5rem 1rem;
+  background: var(--paper-raise); color: var(--ink-soft);
+  font-size: .76rem; letter-spacing: .12em;
+  border-bottom: 1px solid var(--line);
+}
+.promise-strip span { display: flex; align-items: center; gap: .45em; white-space: nowrap; }
+.promise-strip span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--brass); }
+
+/* ============ header ============ */
+.site-head {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 2.4rem;
+  padding: .9rem clamp(1rem, 4vw, 3.4rem);
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: .65rem; }
+.brand-mark { width: 34px; height: 34px; color: var(--ink); flex: none; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.3; }
+.brand-text strong { font-size: 1rem; font-weight: 600; letter-spacing: .02em; }
+.brand-text small { font-size: .68rem; color: var(--ink-soft); letter-spacing: .14em; }
+
+.site-nav { display: flex; gap: clamp(1.2rem, 2.4vw, 2.2rem); margin-left: auto; }
+.site-nav a {
+  position: relative;
+  font-size: .92rem; letter-spacing: .06em; color: var(--ink);
+  padding: .3em 0;
+}
+.site-nav a::after {
+  content: ""; position: absolute; left: 50%; bottom: -2px;
+  width: 0; height: 2px; background: var(--brass);
+  transform: translateX(-50%);
+  transition: width .25s ease;
+}
+.site-nav a:hover { color: var(--brass); }
+.site-nav a:hover::after { width: 100%; }
+
+.head-actions { display: flex; align-items: center; gap: 1rem; }
+.lang-switch { display: flex; border: 1px solid var(--line-strong); border-radius: 2px; overflow: hidden; }
+.lang-switch button {
+  padding: .35em .85em; font-size: .8rem;
+  background: transparent; border: none; color: var(--ink-soft);
+  transition: all .2s;
+}
+.lang-switch button + button { border-left: 1px solid var(--line-strong); }
+.lang-switch button.on { background: var(--ink); color: #fff; }
+.head-call { font-size: .85rem; padding: .55em 1.2em; }
+
+/* ============ hero carousel ============ */
+.hero { position: relative; overflow: hidden; }
+.carousel { display: grid; }
+.carousel .slide {
+  grid-area: 1 / 1;
+  opacity: 0; visibility: hidden;
+  transition: opacity .9s ease, visibility 0s linear .9s;
+  pointer-events: none;
+}
+.carousel .slide.on {
+  opacity: 1; visibility: visible;
+  transition: opacity .9s ease;
+  pointer-events: auto;
+}
+
+/* full-bleed scene backgrounds, white type — TATA big-banner feel */
+.carousel .slide {
+  color: #fff;
+  background:
+    radial-gradient(ellipse 90% 70% at 78% 30%, rgba(255,214,150,.14), transparent 60%),
+    linear-gradient(115deg, #141210 0%, #2a241d 48%, #3d3326 100%);
+}
+.carousel .slide-window {
+  background:
+    radial-gradient(ellipse 80% 60% at 75% 22%, rgba(190,220,235,.2), transparent 65%),
+    linear-gradient(115deg, #10171c 0%, #1e2f3a 50%, #35505e 100%);
+}
+.carousel .slide-measure {
+  background:
+    radial-gradient(ellipse 80% 60% at 72% 75%, rgba(215,0,15,.12), transparent 60%),
+    linear-gradient(115deg, #161616 0%, #242424 55%, #333 100%);
+}
+
+/* scope line-art palette inside dark slides */
+.carousel .slide .hero-art {
+  --ink: rgba(255,255,255,.92);
+  --paper-raise: rgba(255,255,255,.06);
+  --line: rgba(255,255,255,.3);
+  --line-strong: rgba(255,255,255,.35);
+  --brass: #e8c37c;
+  --brass-deep: #e8c37c;
+}
+
+.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.hero-watermark { display: none; }
+
+/* slide with real photo background */
+.slide-photo .hero-bg { background: url("images/hero-bdm.jpg") center/cover no-repeat; }
+.slide-photo .hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(12,10,8,.88) 0%, rgba(12,10,8,.62) 48%, rgba(12,10,8,.2) 100%);
+}
+.hero-photo {
+  display: block; width: min(280px, 56vw);
+  box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+.hero-inner {
+  position: relative;
+  max-width: var(--maxw); margin: 0 auto;
+  padding: clamp(4rem, 10vh, 7rem) clamp(1.2rem, 4vw, 3.4rem) clamp(5rem, 12vh, 8rem);
+  min-height: clamp(480px, 68vh, 720px);
+  display: grid; grid-template-columns: 1.15fr .85fr;
+  gap: clamp(2rem, 5vw, 5rem); align-items: center;
+}
+.kicker {
+  display: flex; align-items: center; gap: .9rem;
+  font-size: .8rem; letter-spacing: .3em;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 1.6rem;
+}
+.kicker-line { width: 3rem; height: 2px; background: var(--brass); flex: none; }
+.hero-copy h1 {
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  font-weight: 300; letter-spacing: .06em;
+  margin-bottom: 1.5rem;
+}
+.hero-sub {
+  max-width: 32em; color: rgba(255,255,255,.72);
+  font-size: 1.02rem; font-weight: 300;
+  margin-bottom: 2.4rem;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 1.4rem; }
+.slide .btn-ghost { border-color: rgba(255,255,255,.55); color: #fff; }
+.slide .btn-ghost:hover { background: #fff; color: var(--dark); border-color: #fff; }
+.hero-note { font-size: .82rem; letter-spacing: .08em; color: rgba(255,255,255,.5); }
+
+/* hero art */
+.hero-art { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+.door-scene { position: relative; width: min(250px, 58vw); perspective: 900px; }
+.door-svg { display: block; width: 100%; }
+.door-leaf-wrap {
+  position: absolute; left: 16.2%; top: 7.6%; width: 67.7%; height: 90%;
+  transform-origin: left center;
+  animation: doorOpen 2.6s cubic-bezier(.6,.05,.25,1) .9s forwards;
+}
+.door-leaf { display: block; width: 100%; height: 100%; }
+@keyframes doorOpen { to { transform: rotateY(-38deg); } }
+.light-spill { animation: spill 2.6s ease .9s forwards; }
+@keyframes spill { to { opacity: .22; } }
+.window-scene, .measure-scene { width: min(290px, 62vw); }
+.window-svg, .measure-svg { display: block; width: 100%; }
+.hero-art-caption {
+  font-size: .74rem; letter-spacing: .34em;
+  color: rgba(255,255,255,.55);
+  border-top: 1px solid rgba(255,255,255,.25);
+  padding-top: .9rem; text-align: center;
+}
+
+/* carousel nav overlays bottom of hero */
+.carousel-nav {
+  position: absolute; left: 0; right: 0; bottom: 1.6rem; z-index: 6;
+  display: flex; align-items: center; justify-content: center; gap: 1.4rem;
+}
+.car-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.4); background: transparent;
+  color: #fff; font-size: 1rem;
+  transition: all .25s;
+}
+.car-arrow:hover { background: #fff; color: var(--dark); border-color: #fff; }
+.car-dots { display: flex; gap: .55rem; }
+.car-dot {
+  width: 30px; height: 3px; padding: 0;
+  border: none; background: rgba(255,255,255,.35);
+  transition: background .3s;
+}
+.car-dot.on { background: var(--brass); }
+
+/* ============ selling points ============ */
+.points { background: #fff; border-bottom: 1px solid var(--line); }
+.points-grid {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.points-grid li { padding: 2.6rem 2rem; text-align: center; border-left: 1px solid var(--line); }
+.points-grid li:first-child { border-left: none; }
+.pt-num { font-size: .76rem; letter-spacing: .3em; color: var(--brass); }
+.points-grid h3 { font-size: 1.1rem; font-weight: 600; margin: .6rem 0 .4rem; }
+.points-grid p { font-size: .85rem; color: var(--ink-soft); }
+
+/* ============ sections shared ============ */
+section { scroll-margin-top: 5rem; }
+.sec-head {
+  max-width: 760px; margin: 0 auto;
+  padding: clamp(4rem, 10vh, 6.5rem) 1.5rem 2.8rem;
+  text-align: center;
+}
+.sec-index {
+  display: inline-block;
+  font-size: .76rem; letter-spacing: .34em; color: var(--brass);
+  margin-bottom: 1rem;
+}
+.sec-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 500; margin-bottom: .8rem; }
+.sec-head p { color: var(--ink-soft); font-size: .95rem; }
+
+/* ============ brands ============ */
+.brand-cards {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3.4rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem;
+}
+.brand-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 2.8rem 2.6rem 2.6rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.brand-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+.brand-tag {
+  font-size: .7rem; letter-spacing: .22em; color: var(--brass);
+  border: 1px solid currentColor; padding: .3em 1em;
+  display: inline-block; margin-bottom: 1.2rem;
+}
+.brand-card h3 { font-size: 1.55rem; font-weight: 600; margin-bottom: .8rem; }
+.brand-card p { color: var(--ink-soft); font-size: .92rem; margin-bottom: 1.5rem; }
+.chiplist { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chiplist li {
+  font-size: .78rem; letter-spacing: .04em;
+  background: var(--paper-raise);
+  padding: .35em 1em; color: var(--ink-soft);
+  border-radius: 2px;
+}
+
+/* ============ collections ============ */
+.collections .col-row {
+  max-width: var(--maxw);
+  margin: 0 auto 2rem;
+  padding: 0 clamp(1rem, 4vw, 3.4rem);
+  display: grid; grid-template-columns: 1.2fr .8fr;
+  align-items: stretch;
+}
+.col-visual {
+  position: relative; overflow: hidden;
+  min-height: clamp(300px, 40vw, 440px);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.col-door {
+  position: relative; z-index: 2;
+  width: clamp(140px, 17vw, 190px);
+  margin-bottom: -6px;
+  filter: drop-shadow(0 26px 34px rgba(0,0,0,.3));
+  transition: transform .7s cubic-bezier(.6,.05,.25,1);
+}
+.col-row:hover .col-door { transform: translateY(-12px) scale(1.03); }
+.col-visual { --paper-raise: rgba(255,255,255,.1); }
+.col-photo { background-size: cover; background-position: center; }
+.scene-smart { background: linear-gradient(165deg, #3a332a 0%, #1d1812 60%, #120e0a 100%); color: rgba(255,255,255,.9); }
+.scene-smart::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 45% at 50% 100%, rgba(232,195,124,.3), transparent 70%); }
+.scene-wood { background: linear-gradient(165deg, #e9dcc8 0%, #d7bf9d 55%, #bd9d72 100%); color: #4e3f2b; --paper-raise: rgba(255,255,255,.45); }
+.scene-wood::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 28px, rgba(78,63,43,.05) 28px 30px); }
+.scene-glass { background: linear-gradient(165deg, #d3e1e6 0%, #b4ccd6 55%, #92b2bf 100%); color: #33505c; --paper-raise: rgba(255,255,255,.4); }
+.scene-glass::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.5) 46%, transparent 54%); }
+.scene-window { background: linear-gradient(170deg, #e9e6dc 0%, #c9d4cd 50%, #a0b5a9 100%); color: #3e5246; --paper-raise: rgba(255,255,255,.4); }
+.scene-window::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 40% at 72% 18%, rgba(255,255,255,.6), transparent 65%); }
+
+.col-copy {
+  background: #fff;
+  border: 1px solid var(--line); border-left: none;
+  padding: clamp(2rem, 4.5vw, 3.6rem);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.col-row.rev { grid-template-columns: .8fr 1.2fr; }
+.col-row.rev .col-visual { order: 2; }
+.col-row.rev .col-copy { order: 1; border: 1px solid var(--line); border-right: none; }
+.col-tag {
+  align-self: flex-start;
+  font-size: .7rem; letter-spacing: .24em; color: var(--brass);
+  border: 1px solid currentColor; padding: .28em 1em;
+  margin-bottom: 1.2rem;
+}
+.col-copy h3 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 500; letter-spacing: .04em;
+  margin-bottom: .9rem;
+}
+.col-copy p { color: var(--ink-soft); font-size: .92rem; margin-bottom: 1.8rem; max-width: 26em; }
+.col-link {
+  align-self: flex-start;
+  font-size: .88rem; letter-spacing: .12em; color: var(--ink);
+  border-bottom: 2px solid var(--brass);
+  padding-bottom: .3em;
+  transition: color .2s;
+}
+.col-link:hover { color: var(--brass); }
+
+.prod-more { text-align: center; padding: 2.6rem 1rem 0; }
+
+/* ============ statement ============ */
+.statement {
+  margin-top: clamp(4rem, 10vh, 6.5rem);
+  padding: clamp(4.5rem, 12vh, 7.5rem) 1.5rem;
+  background: var(--dark); color: #fff;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.statement::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(215,0,15,.14), transparent 65%);
+  pointer-events: none;
+}
+.statement-kicker {
+  font-size: .76rem; letter-spacing: .4em; color: var(--brass);
+  margin-bottom: 1.6rem;
+}
+.statement h2 {
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  font-weight: 300; letter-spacing: .08em;
+  margin-bottom: 1.2rem;
+}
+.statement-sub { color: rgba(255,255,255,.6); font-size: .95rem; font-weight: 300; }
+
+/* ============ process ============ */
+.steps {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3.4rem);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+}
+.steps li {
+  background: #fff; border: 1px solid var(--line);
+  padding: 2rem 1.8rem 2.2rem;
+  text-align: center;
+  transition: box-shadow .3s, transform .3s;
+}
+.steps li:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.6em; height: 2.6em; border-radius: 50%;
+  border: 1px solid var(--brass); color: var(--brass);
+  font-size: 1rem; margin-bottom: 1rem;
+}
+.steps h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .4rem; }
+.steps p { font-size: .85rem; color: var(--ink-soft); }
+
+/* ============ booking ============ */
+.booking { background: var(--paper-raise); margin-top: clamp(4rem, 10vh, 6.5rem); }
+.booking-inner {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: clamp(3.5rem, 9vh, 6rem) clamp(1rem, 4vw, 3.4rem);
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 5vw, 5rem); align-items: center;
+}
+.booking-copy .sec-index { margin-bottom: .8rem; }
+.booking-copy h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); font-weight: 500; margin-bottom: .9rem; }
+.booking-copy > p { color: var(--ink-soft); max-width: 30em; margin-bottom: 1.8rem; font-size: .95rem; }
+.booking-points li {
+  position: relative; padding-left: 1.7em;
+  margin-bottom: .6rem; font-size: .95rem;
+}
+.booking-points li::before {
+  content: ""; position: absolute; left: 0; top: .5em;
+  width: .9em; height: .45em;
+  border-left: 2px solid var(--brass); border-bottom: 2px solid var(--brass);
+  transform: rotate(-45deg);
+}
+.booking-form {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: clamp(1.8rem, 3.2vw, 2.6rem);
+}
+.bk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.booking-form label {
+  display: flex; flex-direction: column; gap: .4rem;
+  font-size: .78rem; letter-spacing: .08em; color: var(--ink-soft);
+  margin-bottom: 1.1rem;
+}
+.booking-form input, .booking-form select, .booking-form textarea {
+  font-family: inherit; font-size: .95rem;
+  padding: .65em .9em;
+  border: 1px solid var(--line-strong); border-radius: 2px;
+  background: #fff; color: var(--ink);
+  width: 100%; resize: vertical;
+  transition: border-color .2s;
+}
+.booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+  outline: none; border-color: var(--brass);
+}
+.bk-hint { text-align: center; font-size: .82rem; color: var(--ink-soft); margin-top: 1rem; }
+
+/* ============ visit ============ */
+.visit {
+  margin-top: clamp(4rem, 10vh, 6.5rem);
+  background: var(--dark); color: #fff;
+  position: relative; overflow: hidden;
+}
+.visit::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 85% 20%, rgba(215,0,15,.1), transparent 60%);
+  pointer-events: none;
+}
+.visit-inner {
+  position: relative;
+  max-width: var(--maxw); margin: 0 auto;
+  padding: clamp(4rem, 10vh, 6.5rem) clamp(1rem, 4vw, 3.4rem);
+  display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.visit .sec-index.light { color: var(--brass); display: inline-block; margin-bottom: 1rem; }
+.visit h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); font-weight: 300; letter-spacing: .05em; margin-bottom: 1rem; }
+.visit-copy p { color: rgba(255,255,255,.62); max-width: 30em; margin-bottom: 1.8rem; font-size: .95rem; font-weight: 300; }
+.visit-badges { display: flex; gap: .6rem; }
+.visit-badges span {
+  border: 1px solid rgba(255,255,255,.3);
+  padding: .32em 1.2em; font-size: .8rem; letter-spacing: .18em;
+  border-radius: 2px;
+}
+.visit-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.14);
+  padding: 2.4rem 2.2rem;
+}
+.vrow { padding: 1.05rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.vrow:first-child { padding-top: 0; }
+.vrow dt { font-size: .72rem; letter-spacing: .24em; color: rgba(255,255,255,.45); margin-bottom: .3rem; }
+.vrow dd { font-size: .98rem; font-weight: 300; }
+.visit-phone { font-size: 1.65rem; letter-spacing: .05em; font-weight: 400; color: #fff; }
+.visit-phone:hover { color: #ff8a93; }
+.visit-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top: 1.7rem; }
+
+/* ============ footer ============ */
+.site-foot {
+  text-align: center; padding: 2.4rem 1rem 6rem;
+  font-size: .84rem;
+  background: var(--dark); color: rgba(255,255,255,.55);
+}
+.foot-dim { opacity: .7; margin-top: .3rem; }
+
+.big-foot { text-align: left; padding: 0 0 5.5rem; }
+.foot-cols {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: clamp(2.8rem, 7vh, 4.5rem) clamp(1rem, 4vw, 3.4rem) 2.2rem;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+.foot-col h4 {
+  font-size: .88rem; font-weight: 600; letter-spacing: .16em;
+  margin-bottom: 1.1rem; color: #fff;
+}
+.foot-col a, .foot-col p {
+  display: block; font-size: .84rem; color: rgba(255,255,255,.5);
+  margin-bottom: .6rem; line-height: 1.5;
+}
+.foot-col a:hover { color: #fff; }
+.foot-brand-col .brand { margin-bottom: .9rem; }
+.foot-brand-col .brand-mark { color: #fff; }
+.foot-brand-col .brand strong { font-size: 1rem; font-weight: 600; color: #fff; }
+.foot-slogan { font-size: .84rem; color: rgba(255,255,255,.5); max-width: 20em; }
+.foot-base {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 1.3rem clamp(1rem, 4vw, 3.4rem);
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: .76rem; color: rgba(255,255,255,.4);
+}
+
+/* ============ shop ============ */
+.shop-main {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: clamp(2.8rem, 7vh, 4.5rem) clamp(1rem, 4vw, 3.4rem) clamp(3.5rem, 8vh, 5.5rem);
+  min-height: 60vh;
+}
+.shop-head { text-align: center; max-width: 720px; margin: 0 auto; }
+.shop-head h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 500; margin: .5rem 0 .9rem; }
+.shop-head p { color: var(--ink-soft); font-size: .95rem; }
+.sample-note { font-size: .8rem; color: var(--brass); margin-top: .7rem; }
+
+.shop-filters {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem;
+  margin: 2.6rem 0 2.4rem;
+}
+.shop-filters button {
+  padding: .55em 1.6em; font-size: .88rem; letter-spacing: .06em;
+  background: #fff; border: 1px solid var(--line-strong); border-radius: 2px;
+  color: var(--ink-soft); transition: all .2s;
+}
+.shop-filters button:hover { border-color: var(--ink); color: var(--ink); }
+.shop-filters button.on { background: var(--brass); border-color: var(--brass); color: #fff; }
+
+.shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+.shop-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  transition: box-shadow .3s, transform .3s;
+}
+.shop-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-5px); }
+.shop-art {
+  position: relative;
+  display: flex; justify-content: center; align-items: center;
+  padding: 2.2rem 0 1.5rem;
+  color: var(--ink);
+  background: var(--paper-raise);
+}
+.stock-tag {
+  position: absolute; top: 10px; left: 10px; z-index: 1;
+  font-size: .68rem; letter-spacing: .08em;
+  padding: .26em .7em;
+  background: rgba(26,26,26,.72); color: #fff;
+  backdrop-filter: blur(2px);
+}
+.stock-tag.has { background: var(--brass); color: #fff; }
+.shop-art svg { width: 88px; height: auto; display: block; filter: drop-shadow(0 10px 14px rgba(0,0,0,.08)); }
+.shop-art img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .5s;
+}
+.shop-card:hover .shop-art img { transform: scale(1.04); }
+.shop-art:has(img) { padding: 0; aspect-ratio: 4 / 5; overflow: hidden; }
+.shop-info { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.shop-info h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: .4rem; }
+.shop-info > p { font-size: .84rem; color: var(--ink-soft); flex: 1; margin-bottom: 1rem; }
+.shop-price { display: flex; align-items: baseline; gap: .5rem; margin-bottom: 1.1rem; }
+.shop-price strong { font-size: 1.4rem; font-weight: 600; color: var(--brass); }
+.shop-price span { font-size: .76rem; color: var(--ink-soft); letter-spacing: .05em; }
+.add-btn { width: 100%; font-size: .88rem; }
+
+/* cart button */
+.cart-btn {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 40px; border-radius: 2px;
+  background: transparent; border: 1px solid var(--line-strong); color: var(--ink);
+  transition: all .2s;
+}
+.cart-btn:hover { border-color: var(--ink); }
+.cart-count {
+  position: absolute; top: -8px; right: -8px;
+  min-width: 18px; height: 18px; padding: 0 4px;
+  background: var(--brass); color: #fff;
+  font-size: .7rem; line-height: 18px; text-align: center;
+  border-radius: 9px;
+}
+
+/* drawer */
+.drawer-overlay {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(0,0,0,.45);
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+.drawer-overlay.show { opacity: 1; pointer-events: auto; }
+.cart-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 85;
+  width: min(420px, 92vw);
+  background: #fff;
+  box-shadow: -10px 0 40px rgba(0,0,0,.14);
+  display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform .35s cubic-bezier(.6,.05,.25,1);
+}
+.cart-drawer.open { transform: none; }
+.cart-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.3rem 1.5rem; border-bottom: 1px solid var(--line);
+}
+.cart-head h2 { font-size: 1.15rem; font-weight: 600; }
+.cart-close {
+  background: none; border: none; font-size: 1.6rem; line-height: 1;
+  color: var(--ink-soft); padding: .2rem .5rem;
+}
+.cart-close:hover { color: var(--ink); }
+.cart-items { flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
+.cart-empty { color: var(--ink-soft); text-align: center; padding: 3rem 0; font-size: .92rem; }
+.cart-item {
+  display: flex; gap: 1rem; padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.cart-item-art { width: 46px; flex: none; color: var(--ink); }
+.cart-item-art svg { width: 100%; height: auto; }
+.cart-item-art img { width: 100%; height: 62px; object-fit: cover; display: block; border-radius: 2px; }
+.cart-item-main { flex: 1; min-width: 0; }
+.cart-item-main h4 { font-size: .92rem; font-weight: 600; margin-bottom: .25rem; }
+.cart-item-price { font-size: .85rem; color: var(--brass); margin-bottom: .5rem; }
+.cart-item-price small { color: var(--ink-soft); }
+.spec-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .45rem; }
+.spec-chip {
+  font-size: .72rem; letter-spacing: .03em;
+  background: var(--paper-raise); border-radius: 2px;
+  color: var(--ink-soft); padding: .18em .7em;
+}
+.cart-item-note { font-size: .76rem; color: var(--ink-soft); margin-bottom: .45rem; }
+.qty-row { display: flex; align-items: center; gap: .6rem; }
+.qty-btn {
+  width: 26px; height: 26px; line-height: 1; border-radius: 2px;
+  border: 1px solid var(--line-strong); background: #fff;
+  font-size: 1rem; color: var(--ink);
+}
+.qty-btn:hover { border-color: var(--ink); }
+.qty-val { min-width: 1.6em; text-align: center; font-size: .95rem; }
+.item-del {
+  margin-left: auto; background: none; border: none;
+  color: var(--ink-soft); font-size: 1.1rem;
+}
+.item-del:hover { color: var(--brass); }
+.cart-foot { padding: 1.3rem 1.5rem 1.5rem; border-top: 1px solid var(--line); }
+.cart-total-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: .3rem;
+}
+.cart-total-row strong { font-size: 1.45rem; font-weight: 600; color: var(--brass); }
+.cart-total-note { font-size: .76rem; color: var(--ink-soft); margin-bottom: 1rem; }
+.cart-clear {
+  width: 100%; margin-top: .6rem; padding: .5em;
+  background: none; border: none; color: var(--ink-soft);
+  font-size: .82rem; text-decoration: underline;
+}
+.cart-clear:hover { color: var(--brass); }
+
+/* modals */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+  padding: 1rem;
+}
+.modal-overlay.show { opacity: 1; pointer-events: auto; }
+.order-modal {
+  width: min(560px, 100%);
+  background: #fff; border-radius: 2px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.2);
+  padding: 2.2rem 2rem;
+  transform: translateY(14px); transition: transform .3s;
+}
+.modal-overlay.show .order-modal { transform: none; }
+.order-modal h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: .5rem; }
+.order-hint { font-size: .88rem; color: var(--ink-soft); margin-bottom: 1.1rem; }
+.order-modal textarea {
+  width: 100%; resize: vertical;
+  font-family: inherit; font-size: .84rem; line-height: 1.6;
+  padding: .8em 1em; border: 1px solid var(--line-strong); border-radius: 2px;
+  background: var(--paper-raise); color: var(--ink);
+  margin-bottom: 1.3rem;
+}
+.order-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+/* spec modal */
+.spec-tag {
+  display: inline-block; margin-bottom: .6rem;
+  font-size: .7rem; letter-spacing: .24em; color: var(--brass);
+  border: 1px solid currentColor; padding: .25em 1em;
+}
+.spec-modal h3 { margin-bottom: .4rem; }
+.spec-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .9rem;
+  margin-bottom: .9rem;
+}
+.spec-grid label, .spec-note-label {
+  display: flex; flex-direction: column; gap: .35rem;
+  font-size: .78rem; letter-spacing: .07em; color: var(--ink-soft);
+}
+.spec-note-label { margin-bottom: 1.2rem; }
+.spec-grid input, .spec-note-label textarea {
+  font-family: inherit; font-size: .92rem;
+  padding: .55em .8em;
+  border: 1px solid var(--line-strong); border-radius: 2px;
+  background: #fff; color: var(--ink); width: 100%; resize: vertical;
+  transition: border-color .2s;
+}
+.spec-grid input:focus, .spec-note-label textarea:focus {
+  outline: none; border-color: var(--brass);
+}
+.spec-grid input[type="number"] { appearance: textfield; -moz-appearance: textfield; }
+.spec-grid input::-webkit-outer-spin-button,
+.spec-grid input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* ============ mobile bar / toast ============ */
+.mobile-bar {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 24px rgba(0,0,0,.08);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.mobile-bar a, .mobile-bar button {
+  padding: .95em 0; text-align: center;
+  font-size: .88rem; letter-spacing: .05em;
+  background: none; border: none; color: var(--ink);
+}
+.mobile-bar > * + * { border-left: 1px solid var(--line); }
+.mobile-bar a:first-child { background: var(--brass); color: #fff; }
+
+.toast {
+  position: fixed; left: 50%; bottom: 5.5rem; z-index: 95;
+  transform: translate(-50%, 20px);
+  background: var(--dark); color: #fff;
+  padding: .75em 1.5em; font-size: .88rem; border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  opacity: 0; pointer-events: none;
+  transition: all .3s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ============ reveal animations ============ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01s !important; transition-duration: .01s !important; }
+}
+
+/* language fade */
+body.lang-fading [data-i18n] { opacity: 0; }
+[data-i18n] { transition: opacity .18s ease; }
+
+/* ============ responsive ============ */
+@media (max-width: 960px) {
+  .site-nav { display: none; }
+  .promise-strip { gap: 1rem; overflow-x: auto; justify-content: flex-start; }
+  .hero-inner { grid-template-columns: 1fr; min-height: 0; padding-bottom: 6rem; }
+  .hero-art { order: -1; }
+  .door-scene { width: min(190px, 46vw); }
+  .window-scene, .measure-scene { width: min(210px, 50vw); }
+  .points-grid { grid-template-columns: 1fr 1fr; }
+  .points-grid li { border-top: 1px solid var(--line); }
+  .points-grid li:nth-child(odd) { border-left: none; }
+  .brand-cards { grid-template-columns: 1fr; }
+  .collections .col-row, .col-row.rev { grid-template-columns: 1fr; }
+  .col-row.rev .col-visual { order: 1; }
+  .col-row.rev .col-copy { order: 2; }
+  .col-copy, .col-row.rev .col-copy { border: 1px solid var(--line); border-top: none; }
+  .col-visual { min-height: 250px; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .booking-inner { grid-template-columns: 1fr; }
+  .visit-inner { grid-template-columns: 1fr; }
+  .foot-cols { grid-template-columns: 1fr 1fr; }
+  .shop-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .head-call { display: none; }
+  .brand-text strong { font-size: .88rem; }
+  .brand-text small { display: none; }
+  .mobile-bar { display: grid; }
+  .steps { grid-template-columns: 1fr; }
+  .shop-grid { grid-template-columns: 1fr; }
+  .hero-ctas .btn { flex: 1 1 100%; }
+  .order-actions .btn { flex: 1 1 100%; }
+}
+@media (max-width: 480px) {
+  .spec-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ 单文件 SPA 视图切换 ============ */
+#viewShop { display: none; }
+body.in-shop #viewHome { display: none; }
+body.in-shop #viewShop { display: block; }
+</style>
+</head>
+<body>
+
+<!-- ================= 首页视图 ================= -->
+<div id="viewHome">
+<!-- service promise strip -->
+<div class="promise-strip">
+  <span data-i18n="ps.1">免费上门测量</span>
+  <span data-i18n="ps.2">专业安装团队</span>
+  <span data-i18n="ps.3">质保售后无忧</span>
+  <span data-i18n="ps.4">深港两地服务</span>
+</div>
+
+<header class="site-head" id="top">
+  <a class="brand" href="#top">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="7" y="4" width="18" height="26" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="10.5" y="7.5" width="11" height="19" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <circle cx="13" cy="17" r="1.4" fill="var(--brass)" stroke="none"/>
+    </svg>
+    <span class="brand-text">
+      <strong data-i18n="brand.name">云鹿智能门 × 暮森门窗</strong>
+      <small data-i18n="brand.sub">深圳 · 罗湖 · 乐安居 L3</small>
+    </span>
+  </a>
+
+  <nav class="site-nav" aria-label="main">
+    <a href="#brands" data-i18n="nav.brands">双品牌</a>
+    <a href="#collections" data-i18n="nav.products">产品</a>
+    <a href="#shop" data-shop data-i18n="nav.shop">在线商城</a>
+    <a href="#booking" data-i18n="nav.booking">预约测量</a>
+    <a href="#visit" data-i18n="nav.visit">到店</a>
+  </nav>
+
+  <div class="head-actions">
+    <div class="lang-switch" role="group" aria-label="language">
+      <button data-setlang="zh-CN" class="on">简</button>
+      <button data-setlang="zh-TW">繁</button>
+      <button data-setlang="en">EN</button>
+    </div>
+    <a class="btn btn-ink head-call" href="tel:18028723301">
+      <span data-i18n="nav.call">致电</span> 180 2872 3301
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO CAROUSEL ============ -->
+  <section class="hero carousel" id="heroCarousel">
+
+    <!-- slide 1 : yunlu smart door -->
+    <div class="slide slide-photo on">
+      <div class="hero-bg" aria-hidden="true"><span class="hero-watermark">門</span></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker"><span class="kicker-line"></span><span data-i18n="hero.kicker">云鹿智能门 · 守护每一次归家</span></p>
+          <h1 data-i18n="hero.title">一扇好门，<br>守一户安宁。</h1>
+          <p class="hero-sub" data-i18n="hero.sub">精雕铝装甲门与智能锁联动，人脸、指纹轻松开门——安防与颜值，一门兼得。</p>
+          <div class="hero-ctas">
+            <a class="btn btn-brass" href="#shop" data-shop="smart" data-i18n="hero.cta1">探索智能门</a>
+            <button class="btn btn-ghost" id="wechatBtn" data-i18n="hero.cta2">微信同号，点击复制</button>
+          </div>
+          <p class="hero-note" data-i18n="hero.note">电话 / 微信：180 2872 3301 · 罗湖 · 乐安居 L3</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="hero-photo" src="images/yl-p50.jpg" alt="">
+          <p class="hero-art-caption"><span data-i18n="hero.caption">云鹿智能门 P50</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 2 : musen windows -->
+    <div class="slide slide-window">
+      <div class="hero-bg" aria-hidden="true"><span class="hero-watermark">窗</span></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker"><span class="kicker-line"></span><span data-i18n="sl2.kicker">暮森门窗 · 系统封窗</span></p>
+          <h1 data-i18n="sl2.title">把阳台，<br>还给光和风。</h1>
+          <p class="hero-sub" data-i18n="sl2.sub">断桥铝系统窗,多道密封,隔音隔热——城市再喧嚣,家里安安静静。</p>
+          <div class="hero-ctas">
+            <a class="btn btn-brass" href="#shop" data-shop="window" data-i18n="sl2.cta">探索系统窗</a>
+            <a class="btn btn-ghost" href="#booking" data-i18n="sl2.cta2">预约免费测量</a>
+          </div>
+          <p class="hero-note" data-i18n="hero.note">电话 / 微信：180 2872 3301 · 罗湖 · 乐安居 L3</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="hero-photo" src="images/hero-musen.jpg" alt="">
+          <p class="hero-art-caption"><span data-i18n="sl2.caption">暮森 · 无缝焊接系统窗</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- slide 3 : free measuring -->
+    <div class="slide slide-measure">
+      <div class="hero-bg" aria-hidden="true"><span class="hero-watermark">量</span></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker"><span class="kicker-line"></span><span data-i18n="sl3.kicker">免费上门测量 · 深港两地</span></p>
+          <h1 data-i18n="sl3.title">0 元测量，<br>量完再决定。</h1>
+          <p class="hero-sub" data-i18n="sl3.sub">预约后师傅上门量尺,现场出方案与报价——不满意不下单,没有压力。</p>
+          <div class="hero-ctas">
+            <a class="btn btn-brass" href="#booking" data-i18n="sl3.cta">立即预约</a>
+            <a class="btn btn-ghost" href="tel:18028723301" data-i18n="sl3.cta2">电话咨询</a>
+          </div>
+          <p class="hero-note" data-i18n="hero.note">电话 / 微信：180 2872 3301 · 罗湖 · 乐安居 L3</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="measure-scene">
+            <svg viewBox="0 0 300 380" class="measure-svg">
+              <rect x="60" y="40" width="180" height="300" fill="var(--paper-raise)" stroke="var(--ink)" stroke-width="1.6"/>
+              <rect x="78" y="60" width="144" height="120" fill="none" stroke="var(--ink)" stroke-width="1"/>
+              <rect x="78" y="200" width="144" height="120" fill="none" stroke="var(--ink)" stroke-width="1"/>
+              <circle cx="212" cy="192" r="4" fill="var(--brass)"/>
+              <line x1="40" y1="40" x2="40" y2="340" stroke="var(--brass)" stroke-width="1.6"/>
+              <line x1="32" y1="40" x2="48" y2="40" stroke="var(--brass)" stroke-width="1.6"/>
+              <line x1="32" y1="340" x2="48" y2="340" stroke="var(--brass)" stroke-width="1.6"/>
+              <text x="14" y="196" font-size="13" fill="var(--brass-deep)" font-family="Marcellus">H</text>
+              <line x1="60" y1="360" x2="240" y2="360" stroke="var(--brass)" stroke-width="1.6"/>
+              <line x1="60" y1="352" x2="60" y2="368" stroke="var(--brass)" stroke-width="1.6"/>
+              <line x1="240" y1="352" x2="240" y2="368" stroke="var(--brass)" stroke-width="1.6"/>
+              <text x="144" y="376" font-size="13" fill="var(--brass-deep)" font-family="Marcellus">W</text>
+            </svg>
+          </div>
+          <p class="hero-art-caption"><span data-i18n="sl3.caption">上门量尺 · 出方案 · 再报价</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="car-arrow" id="carPrev" aria-label="previous">←</button>
+      <div class="car-dots" id="carDots"></div>
+      <button class="car-arrow" id="carNext" aria-label="next">→</button>
+    </div>
+  </section>
+
+  <!-- ============ SELLING POINTS ============ -->
+  <section class="points" id="points">
+    <ul class="points-grid">
+      <li class="reveal"><span class="pt-num">01</span><h3 data-i18n="pt1.t">多品牌一站式</h3><p data-i18n="pt1.d">云鹿、暮森双招牌，多品牌货源，一家店选齐全屋门窗。</p></li>
+      <li class="reveal"><span class="pt-num">02</span><h3 data-i18n="pt2.t">免费上门测量</h3><p data-i18n="pt2.d">预约即可上门量尺，方案与报价清楚透明。</p></li>
+      <li class="reveal"><span class="pt-num">03</span><h3 data-i18n="pt3.t">专业安装售后</h3><p data-i18n="pt3.d">自有安装团队，交付有标准，售后有人管。</p></li>
+      <li class="reveal"><span class="pt-num">04</span><h3 data-i18n="pt4.t">深港两地服务</h3><p data-i18n="pt4.d">服务深圳、香港及广东地区，跨境购门更安心。</p></li>
+    </ul>
+  </section>
+
+  <!-- ============ BRANDS ============ -->
+  <section class="brands" id="brands">
+    <div class="sec-head reveal">
+      <span class="sec-index">01</span>
+      <h2 data-i18n="brands.title">店里挂的两块招牌</h2>
+      <p data-i18n="brands.sub">主推双品牌，同时兼营多个门窗品牌，按需求与预算帮你配齐。</p>
+    </div>
+    <div class="brand-cards">
+      <article class="brand-card reveal">
+        <header>
+          <span class="brand-tag" data-i18n="b1.tag">智能门 · 入户门</span>
+          <h3 data-i18n="b1.name">云鹿智能门</h3>
+        </header>
+        <p data-i18n="b1.d">入户的第一道安心。精雕铝装甲门，搭配智能门锁，人脸、指纹轻松开门，颜值与安防兼得。</p>
+        <ul class="chiplist">
+          <li data-i18n="b1.c1">精雕铝装甲门</li><li data-i18n="b1.c2">智能门</li><li data-i18n="b1.c3">入户防盗门</li>
+        </ul>
+      </article>
+      <article class="brand-card reveal">
+        <header>
+          <span class="brand-tag" data-i18n="b2.tag">系统门窗</span>
+          <h3 data-i18n="b2.name">暮森门窗</h3>
+        </header>
+        <p data-i18n="b2.d">把阳台交还给光和风。系统封窗、平开窗、推拉窗，隔音隔热，让家安静下来。</p>
+        <ul class="chiplist">
+          <li data-i18n="b2.c1">系统封窗</li><li data-i18n="b2.c2">平开窗</li><li data-i18n="b2.c3">推拉窗</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTIONS (TATA-style big banners) ============ -->
+  <section class="collections" id="collections">
+    <div class="sec-head reveal">
+      <span class="sec-index">02</span>
+      <h2 data-i18n="col.title">四大品类</h2>
+      <p data-i18n="col.sub">每一类,都值得一整面墙的展示。</p>
+    </div>
+
+    <article class="col-row reveal">
+      <div class="col-visual col-photo" style="background-image:url('images/banner-smart.jpg')"></div>
+      <div class="col-copy">
+        <span class="col-tag" data-i18n="sc1.tag">云鹿 · 智能门</span>
+        <h3 data-i18n="sc1.title">智能守护<br>安心归家</h3>
+        <p data-i18n="sc1.sub">精雕铝装甲门体，人脸/指纹智能锁，远程可视——门外的世界交给它。</p>
+        <a class="col-link" href="#shop" data-shop="smart" data-i18n="sc1.cta">探索产品 →</a>
+      </div>
+    </article>
+
+    <article class="col-row rev reveal">
+      <div class="col-visual col-photo" style="background-image:url('images/banner-wood.jpg')"></div>
+      <div class="col-copy">
+        <span class="col-tag" data-i18n="sc2.tag">室内木门</span>
+        <h3 data-i18n="sc2.title">静音降噪<br>静享生活</h3>
+        <p data-i18n="sc2.sub">实木复合与碳晶饰面,静音锁体加密封条——关门很轻,睡眠很沉。</p>
+        <a class="col-link" href="#shop" data-shop="wood" data-i18n="sc2.cta">探索产品 →</a>
+      </div>
+    </article>
+
+    <article class="col-row reveal">
+      <div class="col-visual col-photo" style="background-image:url('images/banner-glass.jpg')"></div>
+      <div class="col-copy">
+        <span class="col-tag" data-i18n="sc3.tag">玻璃门 · 推拉门</span>
+        <h3 data-i18n="sc3.title">极窄边框<br>通透显大</h3>
+        <p data-i18n="sc3.sub">极窄铝框大视野,双层钢化玻璃,顺滑静音轨道——小空间也能很开阔。</p>
+        <a class="col-link" href="#shop" data-shop="glass" data-i18n="sc3.cta">探索产品 →</a>
+      </div>
+    </article>
+
+    <article class="col-row rev reveal">
+      <div class="col-visual col-photo" style="background-image:url('images/banner-window.jpg')"></div>
+      <div class="col-copy">
+        <span class="col-tag" data-i18n="sc4.tag">暮森 · 系统封窗</span>
+        <h3 data-i18n="sc4.title">隔音隔热<br>封出一间房</h3>
+        <p data-i18n="sc4.sub">断桥铝系统窗,平开/推拉/转角定制——阳台从此是书房、是花园、是茶室。</p>
+        <a class="col-link" href="#shop" data-shop="window" data-i18n="sc4.cta">探索产品 →</a>
+      </div>
+    </article>
+
+    <div class="prod-more reveal">
+      <a class="btn btn-brass" href="#shop" data-shop data-i18n="prod.shopBtn">进入在线商城挑选 →</a>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <section class="statement reveal">
+    <p class="statement-kicker" data-i18n="state.k">我们的信条</p>
+    <h2 data-i18n="state.t">做更好的门窗，<br>给大湾区的每个家。</h2>
+    <p class="statement-sub" data-i18n="state.d">从深圳到香港,让更多家庭享受安静、安全、舒适的居住生活。</p>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="process" id="process">
+    <div class="sec-head reveal">
+      <span class="sec-index">03</span>
+      <h2 data-i18n="proc.title">从咨询到装好，四步</h2>
+      <p data-i18n="proc.sub">每一步都有人跟进，不让你操心。</p>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span class="step-num">一</span><h3 data-i18n="s1.t">咨询选型</h3><p data-i18n="s1.d">到店或微信沟通需求与预算，推荐合适的品牌与款式。</p></li>
+      <li class="reveal"><span class="step-num">二</span><h3 data-i18n="s2.t">免费测量</h3><p data-i18n="s2.d">预约上门量尺，现场评估安装条件，出方案与报价。</p></li>
+      <li class="reveal"><span class="step-num">三</span><h3 data-i18n="s3.t">定制生产</h3><p data-i18n="s3.d">确认方案后下单，工厂按尺寸定制生产。</p></li>
+      <li class="reveal"><span class="step-num">四</span><h3 data-i18n="s4.t">安装售后</h3><p data-i18n="s4.d">专业团队送货安装，验收满意，售后有保障。</p></li>
+    </ol>
+  </section>
+
+  <!-- ============ BOOKING ============ -->
+  <section class="booking" id="booking">
+    <div class="booking-inner">
+      <div class="booking-copy reveal">
+        <span class="sec-index">04</span>
+        <h2 data-i18n="bk.title">0 元预约测量</h2>
+        <p data-i18n="bk.sub">填好信息,点击按钮,预约内容会自动复制——粘贴到微信发给我们,或直接打电话,都可以。</p>
+        <ul class="booking-points">
+          <li data-i18n="bk.p1">上门量尺不收费</li>
+          <li data-i18n="bk.p2">现场出方案与报价</li>
+          <li data-i18n="bk.p3">不满意不下单,零压力</li>
+        </ul>
+      </div>
+      <form class="booking-form reveal" id="bookingForm">
+        <div class="bk-grid">
+          <label><span data-i18n="bk.name">称呼</span><input type="text" id="bkName" autocomplete="name"></label>
+          <label><span data-i18n="bk.phone">联系电话</span><input type="tel" id="bkPhone" autocomplete="tel"></label>
+        </div>
+        <label><span data-i18n="bk.area">所在区域</span>
+          <select id="bkArea">
+            <option value="sz" data-i18n="bk.areaSz">深圳</option>
+            <option value="hk" data-i18n="bk.areaHk">香港</option>
+            <option value="gd" data-i18n="bk.areaGd">广东其他城市</option>
+          </select>
+        </label>
+        <label><span data-i18n="bk.msg">需求简述(选填)</span><textarea id="bkMsg" rows="3"></textarea></label>
+        <button type="submit" class="btn btn-brass wide" data-i18n="bk.btn">生成预约信息,发微信给我们</button>
+        <p class="bk-hint" data-i18n="bk.hint">或直接拨打 / 微信:180 2872 3301</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit" id="visit">
+    <div class="visit-inner">
+      <div class="visit-copy reveal">
+        <span class="sec-index light">05</span>
+        <h2 data-i18n="visit.title">到店看样，<br>摸到实物再决定。</h2>
+        <p data-i18n="visit.sub">展厅常年陈列智能门、木门、玻璃门与系统窗实样，欢迎来店对比。建议来店前先电话或微信预约。</p>
+        <div class="visit-badges">
+          <span data-i18n="area.sz">深圳</span><span data-i18n="area.hk">香港</span><span data-i18n="area.gd">广东</span>
+        </div>
+      </div>
+      <div class="visit-card reveal">
+        <dl>
+          <div class="vrow"><dt data-i18n="visit.phoneLabel">电话 / 微信同号</dt><dd><a class="visit-phone" href="tel:18028723301">180 2872 3301</a></dd></div>
+          <div class="vrow"><dt data-i18n="visit.addrLabel">门店地址</dt><dd data-i18n="visit.addr">广东省深圳市罗湖区笋岗街道 乐安居 L3</dd></div>
+          <div class="vrow"><dt data-i18n="visit.navLabel">导航提示</dt><dd data-i18n="visit.nav">地图搜索「乐安居 笋岗」即可到店</dd></div>
+        </dl>
+        <div class="visit-actions">
+          <a class="btn btn-brass wide" href="tel:18028723301" data-i18n="visit.callBtn">一键拨号</a>
+          <button class="btn btn-ghost-light wide" data-copy-wechat data-i18n="visit.wxBtn">复制微信号</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ BIG FOOTER ============ -->
+<footer class="site-foot big-foot">
+  <div class="foot-cols">
+    <div class="foot-col foot-brand-col">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="7" y="4" width="18" height="26" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="10.5" y="7.5" width="11" height="19" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          <circle cx="13" cy="17" r="1.4" fill="var(--brass)" stroke="none"/>
+        </svg>
+        <strong data-i18n="brand.name">云鹿智能门 × 暮森门窗</strong>
+      </div>
+      <p class="foot-slogan" data-i18n="ft.slogan">做更好的门窗,给大湾区的每个家。</p>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="ft.products">产品中心</h4>
+      <a href="#shop" data-shop="smart" data-i18n="ft.cat1">智能门 · 装甲门</a>
+      <a href="#shop" data-shop="wood" data-i18n="ft.cat2">室内木门</a>
+      <a href="#shop" data-shop="glass" data-i18n="ft.cat3">玻璃门 · 推拉门</a>
+      <a href="#shop" data-shop="window" data-i18n="ft.cat4">系统封窗</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="ft.quick">快速入口</h4>
+      <a href="#shop" data-shop data-i18n="nav.shop">在线商城</a>
+      <a href="#booking" data-i18n="ft.book">0 元预约测量</a>
+      <a href="#brands" data-i18n="nav.brands">双品牌</a>
+      <a href="#visit" data-i18n="nav.visit">到店看样</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="ft.contact">联系我们</h4>
+      <a href="tel:18028723301"><span data-i18n="foot.tel">电话 / 微信</span>:180 2872 3301</a>
+      <p data-i18n="foot.addr">深圳市罗湖区笋岗街道乐安居 L3</p>
+      <p data-i18n="ft.hours">营业时间:09:00 – 20:00</p>
+    </div>
+  </div>
+  <div class="foot-base">
+    <p><span data-i18n="foot.name">云鹿智能门 × 暮森门窗（深圳店）</span> · © <span class="year"></span></p>
+  </div>
+</footer>
+
+<!-- mobile action bar -->
+<div class="mobile-bar">
+  <a href="tel:18028723301" data-i18n="mb.call">拨打电话</a>
+  <button data-copy-wechat data-i18n="mb.wx">复制微信</button>
+  <a href="#booking" data-i18n="mb.book">预约测量</a>
+</div>
+
+
+
+
+</div>
+
+<!-- ================= 商城视图 ================= -->
+<div id="viewShop">
+<header class="site-head">
+  <a class="brand" href="#home" data-home>
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="7" y="4" width="18" height="26" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="10.5" y="7.5" width="11" height="19" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <circle cx="13" cy="17" r="1.4" fill="var(--brass)" stroke="none"/>
+    </svg>
+    <span class="brand-text">
+      <strong data-i18n="brand.name">云鹿智能门 × 暮森门窗</strong>
+      <small data-i18n="brand.sub">深圳 · 罗湖 · 乐安居 L3</small>
+    </span>
+  </a>
+
+  <nav class="site-nav" aria-label="main">
+    <a href="#home" data-home data-i18n="shop.navHome">首页</a>
+    <a href="#home" data-home="visit" data-i18n="nav.visit">到店</a>
+  </nav>
+
+  <div class="head-actions">
+    <div class="lang-switch" role="group" aria-label="language">
+      <button data-setlang="zh-CN" class="on">简</button>
+      <button data-setlang="zh-TW">繁</button>
+      <button data-setlang="en">EN</button>
+    </div>
+    <button class="cart-btn" id="cartBtn" aria-label="cart">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M4 6h2l2.2 10.5a1 1 0 0 0 1 .8h7.8a1 1 0 0 0 1-.8L20 9H7"/>
+        <circle cx="10.5" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main class="shop-main">
+  <div class="shop-head">
+    <span class="sec-index" data-i18n="shop.kicker">在线商城</span>
+    <h1 data-i18n="shop.title">挑好款，发给我们报价。</h1>
+    <p data-i18n="shop.sub">门窗均为定制产品，这里的价格为起步参考价。把心仪的款式加入清单，一键生成询价单发微信，我们尽快回复。</p>
+    <p class="sample-note" data-i18n="shop.sampleNote">※ 页面价格为参考价，实际以门店报价为准，欢迎微信咨询。</p>
+  </div>
+
+  <div class="shop-filters" id="shopFilters">
+    <button class="on" data-cat="all" data-i18n="shop.all">全部</button>
+    <button data-cat="smart" data-i18n="shop.catSmart">智能门 · 装甲门</button>
+    <button data-cat="wood" data-i18n="shop.catWood">室内木门</button>
+    <button data-cat="glass" data-i18n="shop.catGlass">玻璃门 · 推拉门</button>
+    <button data-cat="window" data-i18n="shop.catWindow">系统封窗</button>
+  </div>
+
+  <div class="shop-grid" id="shopGrid"></div>
+</main>
+
+<!-- cart drawer -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="cart drawer">
+  <header class="cart-head">
+    <h2 data-i18n="cart.title">询价清单</h2>
+    <button class="cart-close" id="cartClose" aria-label="close">×</button>
+  </header>
+  <div class="cart-items" id="cartItems"></div>
+  <footer class="cart-foot">
+    <div class="cart-total-row">
+      <span data-i18n="cart.total">参考合计</span>
+      <strong id="cartTotal">¥0</strong>
+    </div>
+    <p class="cart-total-note" data-i18n="cart.totalNote">定制产品，最终价格以上门量尺后的报价为准。</p>
+    <button class="btn btn-brass wide" id="checkoutBtn" data-i18n="cart.checkout">生成询价单，微信发给我们</button>
+    <button class="cart-clear" id="cartClear" data-i18n="cart.clear">清空清单</button>
+  </footer>
+</aside>
+
+<!-- spec modal -->
+<div class="modal-overlay" id="specOverlay">
+  <div class="order-modal spec-modal" role="dialog" aria-modal="true">
+    <span class="spec-tag" data-i18n="spec.tag">定制信息</span>
+    <h3 id="specProdName"></h3>
+    <p class="order-hint" data-i18n="spec.hint">门窗按尺寸定制。方便的话填一下大概尺寸和喜欢的颜色，不确定也没关系，可以留空，到时上门帮你量。</p>
+    <form id="specForm">
+      <div class="spec-grid">
+        <label><span data-i18n="spec.w">宽（mm）</span><input type="number" id="specW" min="1" inputmode="numeric"></label>
+        <label><span data-i18n="spec.h">高（mm）</span><input type="number" id="specH" min="1" inputmode="numeric"></label>
+        <label><span data-i18n="spec.color">颜色 / 饰面</span><input type="text" id="specColor"></label>
+        <label><span data-i18n="spec.qty">数量</span><input type="number" id="specQty" min="1" value="1" inputmode="numeric"></label>
+      </div>
+      <label class="spec-note-label"><span data-i18n="spec.note">其他要求（选填）</span><textarea id="specNote" rows="2"></textarea></label>
+      <div class="order-actions">
+        <button type="submit" class="btn btn-brass" data-i18n="spec.add">加入询价清单</button>
+        <button type="button" class="btn btn-ghost" id="specCancel" data-i18n="spec.cancel">取消</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- order modal -->
+<div class="modal-overlay" id="orderOverlay">
+  <div class="order-modal" role="dialog" aria-modal="true">
+    <h3 data-i18n="order.title">询价单已生成</h3>
+    <p class="order-hint" data-i18n="order.hint">清单已复制。打开微信，添加好友 18028723301，粘贴发送即可，我们会尽快报价。</p>
+    <textarea id="orderText" readonly rows="10"></textarea>
+    <div class="order-actions">
+      <button class="btn btn-brass" id="orderCopy" data-i18n="order.copy">再次复制清单</button>
+      <a class="btn btn-ghost" href="tel:18028723301" data-i18n="order.call">直接拨打电话</a>
+      <button class="btn btn-ghost" id="orderClose" data-i18n="order.close">关闭</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <p><span data-i18n="foot.name">云鹿智能门 × 暮森门窗（深圳店）</span> · <span data-i18n="foot.addr">深圳市罗湖区笋岗街道乐安居 L3</span></p>
+  <p class="foot-dim"><span data-i18n="foot.tel">电话 / 微信</span>：180 2872 3301 · © <span class="year"></span></p>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:18028723301" data-i18n="mb.call">拨打电话</a>
+  <button data-copy-wechat data-i18n="mb.wx">复制微信</button>
+  <button id="mobileCartBtn"><span data-i18n="mb.cart">询价清单</span> (<span id="cartCountM">0</span>)</button>
+</div>
+
+
+
+
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+window.PRODUCTS = [{"id": "yl-p50", "cat": "smart", "price": 23820, "unit": "door", "img": "images/yl-p50.jpg", "name": {"zh-CN": "云鹿智能门 P50", "zh-TW": "雲鹿智能門 P50", "en": "Yunlu Smart Door P50"}, "desc": {"zh-CN": "AI双摄猫眼 + 10.1寸智能中控屏，接入米家APP，C级锁芯甲级门体。", "zh-TW": "AI雙攝貓眼 + 10.1寸智能中控屏，接入米家APP，C級鎖芯甲級門體。", "en": "Dual AI camera peephole, 10.1\" smart control screen, Mi Home app, Class-C cylinder in a Class-A door."}, "stock": 0}, {"id": "bdm-lengyun", "cat": "smart", "price": 16800, "unit": "door", "img": "images/bdm-lengyun.jpg", "name": {"zh-CN": "班德马 · 棱韵 系统偏轴门", "zh-TW": "班德馬 · 稜韻 系統偏軸門", "en": "BDEMA Lengyun Pivot Door"}, "desc": {"zh-CN": "鎏金岁月肌理，菱形门扣，偏轴开合的仪式感入户门。", "zh-TW": "鎏金歲月肌理，菱形門扣，偏軸開合的儀式感入戶門。", "en": "Gilded patina texture with diamond pull — a ceremonial pivot entrance."}, "stock": 0}, {"id": "bdm-muyu", "cat": "smart", "price": 15800, "unit": "door", "img": "images/bdm-muyu.jpg", "name": {"zh-CN": "班德马 · 沐语 系统门景", "zh-TW": "班德馬 · 沐語 系統門景", "en": "BDEMA Muyu Door-Wall System"}, "desc": {"zh-CN": "木纹美学门墙一体，暗藏灯带，入户即建筑立面艺术。", "zh-TW": "木紋美學門牆一體，暗藏燈帶，入戶即建築立面藝術。", "en": "Wood-texture door-and-wall system with hidden lighting — an architectural facade."}, "stock": 0}, {"id": "bdm-junyi", "cat": "smart", "price": 23800, "unit": "door", "img": "images/bdm-junyi.jpg", "name": {"zh-CN": "班德马 · 骏逸 铜雕双开门", "zh-TW": "班德馬 · 駿逸 銅雕雙開門", "en": "BDEMA Junyi Bronze Double Door"}, "desc": {"zh-CN": "熔铜基底浮雕双骏，祥云錾纹，大宅双开入户门。", "zh-TW": "熔銅基底浮雕雙駿，祥雲鏨紋，大宅雙開入戶門。", "en": "Molten-bronze relief horses on a grand double entrance door."}, "stock": 0}, {"id": "bdm-ruijie", "cat": "smart", "price": 12800, "unit": "door", "img": "images/bdm-ruijie.jpg", "name": {"zh-CN": "班德马 · 锐界 系统装甲门", "zh-TW": "班德馬 · 銳界 系統裝甲門", "en": "BDEMA Ruijie Armored Door"}, "desc": {"zh-CN": "放射状羽翼肌理，中央银灰轴线切割，配智能锁具。", "zh-TW": "放射狀羽翼肌理，中央銀灰軸線切割，配智能鎖具。", "en": "Radiating feather texture split by a silver axis, with smart lock."}, "stock": 0}, {"id": "bdm-xinghuan", "cat": "smart", "price": 13800, "unit": "door", "img": "images/bdm-xinghuan.jpg", "name": {"zh-CN": "班德马 · 星环 系统装甲门", "zh-TW": "班德馬 · 星環 系統裝甲門", "en": "BDEMA Xinghuan Armored Door"}, "desc": {"zh-CN": "北斗七星纹理，金色环形拉手，深咖底色沉稳大气。", "zh-TW": "北斗七星紋理，金色環形拉手，深咖底色沉穩大氣。", "en": "Big Dipper motif with a gold ring pull on deep coffee tones."}, "stock": 0}, {"id": "bdm-weian", "cat": "smart", "price": 14800, "unit": "door", "img": "images/bdm-weian.jpg", "name": {"zh-CN": "班德马 · 薇安 法式装甲门", "zh-TW": "班德馬 · 薇安 法式裝甲門", "en": "BDEMA Weian French Armored Door"}, "desc": {"zh-CN": "法式金纹雕饰，奶白门身双开设计，优雅如艺术品。", "zh-TW": "法式金紋雕飾，奶白門身雙開設計，優雅如藝術品。", "en": "French gilded ornament on a cream double door — elegance as art."}, "stock": 0}, {"id": "gb-sijipingan", "cat": "smart", "price": 3980, "unit": "door", "img": "images/gb-sijipingan.jpg", "name": {"zh-CN": "四季平安 推拉门中门", "zh-TW": "四季平安 推拉門中門", "en": "Siji Ping'an Vent Door"}, "desc": {"zh-CN": "新国标4级钢制大门，菱形格栅通风中门，配指纹智能锁。", "zh-TW": "新國標4級鋼製大門，菱形格柵通風中門，配指紋智能鎖。", "en": "GB Class-4 steel door with diamond vent lattice and fingerprint lock."}, "stock": 0}, {"id": "gb-fumanrenjian", "cat": "smart", "price": 4580, "unit": "door", "img": "images/gb-fumanrenjian.jpg", "name": {"zh-CN": "福满人间 平开门中门", "zh-TW": "福滿人間 平開門中門", "en": "Fuman Renjian Vent Door"}, "desc": {"zh-CN": "新国标4级钢制大门，米白浮雕回纹格栅，中式雅致。", "zh-TW": "新國標4級鋼製大門，米白浮雕回紋格柵，中式雅緻。", "en": "GB Class-4 steel door with cream relief lattice — refined Chinese style."}, "stock": 0}, {"id": "gb-caifu", "cat": "smart", "price": 4980, "unit": "door", "img": "images/gb-caifu.jpg", "name": {"zh-CN": "财富平开 雕花大门", "zh-TW": "財富平開 雕花大門", "en": "Caifu Carved Entry Door"}, "desc": {"zh-CN": "新国标4级钢制大门，红棕中式窗棂雕花，指纹锁通风窗。", "zh-TW": "新國標4級鋼製大門，紅棕中式窗欞雕花，指紋鎖通風窗。", "en": "GB Class-4 steel door, auburn lattice carving, fingerprint lock and vent."}, "stock": 0}, {"id": "gb-jinya", "cat": "smart", "price": 4280, "unit": "door", "img": "images/gb-jinya.jpg", "name": {"zh-CN": "金雅平开 安全门", "zh-TW": "金雅平開 安全門", "en": "Jinya Security Door"}, "desc": {"zh-CN": "新国标4级钢制大门，深灰配古铜拉丝饰条，带纱网格栅。", "zh-TW": "新國標4級鋼製大門，深灰配古銅拉絲飾條，帶紗網格柵。", "en": "GB Class-4 steel door in deep grey with bronze trim and mesh vent."}, "stock": 0}, {"id": "wd-2041", "cat": "wood", "price": 1580, "unit": "door", "img": "images/wd-2041.jpg", "name": {"zh-CN": "凯兴 · 东方韵 HY-2041 平板门", "zh-TW": "凱興 · 東方韻 HY-2041 平板門", "en": "Kaixing Oriental Rhyme HY-2041 Flat Door"}, "desc": {"zh-CN": "高定17号深胡桃色，极简平板工艺，碳晶/多层板可选。", "zh-TW": "高定17號深胡桃色，極簡平板工藝，碳晶/多層板可選。", "en": "Deep walnut No.17 finish, minimalist flat panel, carbon-crystal or plywood core."}, "stock": 0}, {"id": "wd-2108", "cat": "wood", "price": 1880, "unit": "door", "img": "images/wd-2108.jpg", "name": {"zh-CN": "凯兴 · 东方韵 HY-2108 模压门", "zh-TW": "凱興 · 東方韻 HY-2108 模壓門", "en": "Kaixing Oriental Rhyme HY-2108 Molded Door"}, "desc": {"zh-CN": "高定37号暖灰色，同步模压回形线条，东方韵味十足。", "zh-TW": "高定37號暖灰色，同步模壓回形線條，東方韻味十足。", "en": "Warm grey No.37 with synchronized-molded meander lines — quietly oriental."}, "stock": 0}, {"id": "wd-2135", "cat": "wood", "price": 1780, "unit": "door", "img": "images/wd-2135.jpg", "name": {"zh-CN": "凯兴 · 东方韵 HY-2135 木纹门", "zh-TW": "凱興 · 東方韻 HY-2135 木紋門", "en": "Kaixing Oriental Rhyme HY-2135 Woodgrain Door"}, "desc": {"zh-CN": "高定42号浅木纹，同步模压肤感纹理，卧室书房百搭。", "zh-TW": "高定42號淺木紋，同步模壓膚感紋理，臥室書房百搭。", "en": "Light woodgrain No.42 with tactile molded texture — fits any bedroom or study."}, "stock": 0}, {"id": "wd-2159", "cat": "wood", "price": 1980, "unit": "door", "img": "images/wd-2159.jpg", "name": {"zh-CN": "凯兴 · 东方韵 HY-2159 红木色门", "zh-TW": "凱興 · 東方韻 HY-2159 紅木色門", "en": "Kaixing Oriental Rhyme HY-2159 Rosewood Door"}, "desc": {"zh-CN": "高定45号红木色，金线竖饰条，中式宅邸的温润气质。", "zh-TW": "高定45號紅木色，金線豎飾條，中式宅邸的溫潤氣質。", "en": "Rosewood No.45 with a gold vertical inlay — warm classic Chinese character."}, "stock": 0}, {"id": "dlx-laotie40", "cat": "glass", "price": 3100, "unit": "door", "img": "images/dlx-laotie40.jpg", "name": {"zh-CN": "德莱轩 · 40老铁门 复古平开门", "zh-TW": "德萊軒 · 40老鐵門 復古平開門", "en": "Delaixuan 40 Iron-Style Retro Door"}, "desc": {"zh-CN": "复古细框配装饰格条，中古风颜色，卫浴卧室皆宜。", "zh-TW": "復古細框配裝飾格條，中古風顏色，衛浴臥室皆宜。", "en": "Retro slim frame with deco muntins — mid-century charm for bath or bedroom."}, "stock": 0}, {"id": "dlx-wanmei13", "cat": "glass", "price": 2688, "unit": "sqm", "img": "images/dlx-wanmei13.jpg", "name": {"zh-CN": "德莱轩 · 完美13料 推拉门", "zh-TW": "德萊軒 · 完美13料 趟門", "en": "Delaixuan Perfect-13 Sliding Door"}, "desc": {"zh-CN": "极窄13mm中梃，超白油砂玻璃可选，厨房阳台隔断首选。", "zh-TW": "極窄13mm中梃，超白油砂玻璃可選，廚房露台隔斷首選。", "en": "Ultra-slim 13mm mullion with frosted ultra-clear glass options."}, "stock": 0}, {"id": "dlx-shixin", "cat": "glass", "price": 2788, "unit": "sqm", "img": "images/dlx-shixin.jpg", "name": {"zh-CN": "德莱轩 · 完美实心料 推拉门", "zh-TW": "德萊軒 · 完美實心料 趟門", "en": "Delaixuan Solid-Profile Sliding Door"}, "desc": {"zh-CN": "实心铝材更稳重，推拉顺滑静音，现代极简黑框。", "zh-TW": "實心鋁材更穩重，推拉順滑靜音，現代極簡黑框。", "en": "Solid aluminum profile, smooth silent glide, minimal black frame."}, "stock": 0}, {"id": "dlx-tanke35", "cat": "glass", "price": 2800, "unit": "sqm", "img": "images/dlx-tanke35.jpg", "name": {"zh-CN": "德莱轩 · 35坦克料 推拉门", "zh-TW": "德萊軒 · 35坦克料 趟門", "en": "Delaixuan 35 Tank-Profile Sliding Door"}, "desc": {"zh-CN": "加厚坦克料型材，大面积玻璃也稳固，灰玻高级感。", "zh-TW": "加厚坦克料型材，大面積玻璃也穩固，灰玻高級感。", "en": "Heavy-duty profile holds large grey-glass panels rock steady."}, "stock": 0}, {"id": "dlx-chaoyang35", "cat": "glass", "price": 2920, "unit": "door", "img": "images/dlx-chaoyang35.jpg", "name": {"zh-CN": "德莱轩 · 35朝阳 平开门", "zh-TW": "德萊軒 · 35朝陽 平開門", "en": "Delaixuan 35 Chaoyang Swing Door"}, "desc": {"zh-CN": "窄框铝合金平开门，卫生间卧室通用，多色饰面。", "zh-TW": "窄框鋁合金平開門，衛生間臥室通用，多色飾面。", "en": "Slim aluminum swing door for bathrooms and bedrooms, many finishes."}, "stock": 0}, {"id": "dlx-dashi40", "cat": "glass", "price": 3050, "unit": "door", "img": "images/dlx-dashi40.jpg", "name": {"zh-CN": "德莱轩 · 40大师 平开门", "zh-TW": "德萊軒 · 40大師 平開門", "en": "Delaixuan 40 Master Swing Door"}, "desc": {"zh-CN": "40系大师款，型材更厚实，关门手感如豪车车门。", "zh-TW": "40系大師款，型材更厚實，關門手感如豪車車門。", "en": "The 40-series Master — thicker profile, closes like a luxury car door."}, "stock": 0}, {"id": "ms-100", "cat": "window", "price": 880, "unit": "sqm", "img": "images/ms-100.jpg", "name": {"zh-CN": "暮森 · 100无缝焊接双内开系统窗", "zh-TW": "暮森 · 100無縫焊接雙內開系統窗", "en": "Musen 100 Seamless-Weld Dual Tilt-Turn Window"}, "desc": {"zh-CN": "无缝焊接窗扇R7圆角，隐藏式排水，三道密封汽车级胶条。", "zh-TW": "無縫焊接窗扇R7圓角，隱藏式排水，三道密封汽車級膠條。", "en": "Seamless-welded sash with R7 corners, hidden drainage, triple automotive-grade seals."}, "stock": 0}, {"id": "ms-110", "cat": "window", "price": 980, "unit": "sqm", "img": "images/ms-110.jpg", "name": {"zh-CN": "暮森 · 110无缝焊接外开/内开系统窗", "zh-TW": "暮森 · 110無縫焊接外開/內開系統窗", "en": "Musen 110 Seamless-Weld In/Out-Swing Window"}, "desc": {"zh-CN": "国标6063-T5铝材，国际PA66隔热条，耐候20年表面处理。", "zh-TW": "國標6063-T5鋁材，國際PA66隔熱條，耐候20年表面處理。", "en": "GB 6063-T5 aluminum, PA66 thermal breaks, 20-year weather-proof finish."}, "stock": 0}, {"id": "ms-120", "cat": "window", "price": 1180, "unit": "sqm", "img": "images/ms-120.jpg", "name": {"zh-CN": "暮森 · 120无缝焊接双内开系统窗", "zh-TW": "暮森 · 120無縫焊接雙內開系統窗", "en": "Musen 120 Seamless-Weld Dual Tilt-Turn Window"}, "desc": {"zh-CN": "120系加宽型材多腔体结构，垂直等温设计，隔音隔热更强。", "zh-TW": "120系加寬型材多腔體結構，垂直等溫設計，隔音隔熱更強。", "en": "Wide 120 multi-chamber profile with isothermal design — stronger insulation and quiet."}, "stock": 0}, {"id": "ms-door", "cat": "window", "price": 1280, "unit": "sqm", "img": "images/ms-door.jpg", "name": {"zh-CN": "暮森 · 中窄推拉门(壁厚3.0)", "zh-TW": "暮森 · 中窄趟門(壁厚3.0)", "en": "Musen Mid-Slim Sliding Door (3.0mm Wall)"}, "desc": {"zh-CN": "3.0mm加厚壁材中窄框推拉门，阳台封窗配套首选。", "zh-TW": "3.0mm加厚壁材中窄框趟門，露台封窗配套首選。", "en": "Mid-slim sliding door in 3.0mm-wall profile — the balcony glazing companion."}, "stock": 0}];
+</script>
+<script>
+"use strict";
+
+/* ================= i18n ================= */
+const I18N = {
+  "zh-CN": {
+    "brand.name": "云鹿智能门 × 暮森门窗",
+    "brand.sub": "深圳 · 罗湖 · 乐安居 L3",
+    "nav.brands": "双品牌", "nav.products": "产品", "nav.process": "服务流程", "nav.visit": "到店", "nav.call": "致电", "nav.shop": "在线商城", "nav.booking": "预约测量",
+    "prod.shopBtn": "进入在线商城挑选 →",
+    "ps.1": "免费上门测量", "ps.2": "专业安装团队", "ps.3": "质保售后无忧", "ps.4": "深港两地服务",
+    "hero.kicker": "云鹿智能门 · 守护每一次归家",
+    "hero.title": "一扇好门，<br>守一户安宁。",
+    "hero.sub": "精雕铝装甲门与智能锁联动，人脸、指纹轻松开门——安防与颜值，一门兼得。",
+    "hero.cta1": "探索智能门", "hero.cta2": "微信同号，点击复制",
+    "hero.note": "电话 / 微信：180 2872 3301 · 罗湖 · 乐安居 L3",
+    "hero.caption": "云鹿智能门 P50",
+    "sl2.kicker": "暮森门窗 · 系统封窗",
+    "sl2.title": "把阳台，<br>还给光和风。",
+    "sl2.sub": "断桥铝系统窗，多道密封，隔音隔热——城市再喧嚣，家里安安静静。",
+    "sl2.cta": "探索系统窗", "sl2.cta2": "预约免费测量", "sl2.caption": "暮森 · 无缝焊接系统窗",
+    "sl3.kicker": "免费上门测量 · 深港两地",
+    "sl3.title": "0 元测量，<br>量完再决定。",
+    "sl3.sub": "预约后师傅上门量尺，现场出方案与报价——不满意不下单，没有压力。",
+    "sl3.cta": "立即预约", "sl3.cta2": "电话咨询", "sl3.caption": "上门量尺 · 出方案 · 再报价",
+    "col.title": "四大品类", "col.sub": "每一类，都值得一整面墙的展示。",
+    "sc1.tag": "云鹿 · 智能门", "sc1.title": "智能守护<br>安心归家",
+    "sc1.sub": "精雕铝装甲门体，人脸/指纹智能锁，远程可视——门外的世界交给它。", "sc1.cta": "探索产品 →",
+    "sc2.tag": "室内木门", "sc2.title": "静音降噪<br>静享生活",
+    "sc2.sub": "实木复合与碳晶饰面，静音锁体加密封条——关门很轻，睡眠很沉。", "sc2.cta": "探索产品 →",
+    "sc3.tag": "玻璃门 · 推拉门", "sc3.title": "极窄边框<br>通透显大",
+    "sc3.sub": "极窄铝框大视野，双层钢化玻璃，顺滑静音轨道——小空间也能很开阔。", "sc3.cta": "探索产品 →",
+    "sc4.tag": "暮森 · 系统封窗", "sc4.title": "隔音隔热<br>封出一间房",
+    "sc4.sub": "断桥铝系统窗，平开/推拉/转角定制——阳台从此是书房、是花园、是茶室。", "sc4.cta": "探索产品 →",
+    "state.k": "我们的信条",
+    "state.t": "做更好的门窗，<br>给大湾区的每个家。",
+    "state.d": "从深圳到香港，让更多家庭享受安静、安全、舒适的居住生活。",
+    "bk.title": "0 元预约测量",
+    "bk.sub": "填好信息，点击按钮，预约内容会自动复制——粘贴到微信发给我们，或直接打电话，都可以。",
+    "bk.p1": "上门量尺不收费", "bk.p2": "现场出方案与报价", "bk.p3": "不满意不下单，零压力",
+    "bk.name": "称呼", "bk.phone": "联系电话", "bk.area": "所在区域",
+    "bk.areaSz": "深圳", "bk.areaHk": "香港", "bk.areaGd": "广东其他城市",
+    "bk.msg": "需求简述（选填）",
+    "bk.namePh": "怎么称呼您", "bk.phonePh": "方便回电的号码", "bk.msgPh": "如：两房一厅换木门 + 封阳台",
+    "bk.btn": "生成预约信息，发微信给我们",
+    "bk.hint": "或直接拨打 / 微信：180 2872 3301",
+    "bk.needPhone": "请填写联系电话",
+    "bk.copied": "预约信息已复制，请打开微信粘贴发送给 18028723301",
+    "bk.copyFail": "复制失败，请直接致电 18028723301",
+    "bk.oHead": "【预约免费测量】", "bk.oName": "称呼", "bk.oPhone": "电话",
+    "bk.oArea": "区域", "bk.oMsg": "需求",
+    "ft.slogan": "做更好的门窗，给大湾区的每个家。",
+    "ft.products": "产品中心", "ft.cat1": "智能门 · 装甲门", "ft.cat2": "室内木门",
+    "ft.cat3": "玻璃门 · 推拉门", "ft.cat4": "系统封窗",
+    "ft.quick": "快速入口", "ft.book": "0 元预约测量",
+    "ft.contact": "联系我们", "ft.hours": "营业时间：09:00 – 20:00",
+    "mb.book": "预约测量",
+    "pt1.t": "多品牌一站式", "pt1.d": "云鹿、暮森双招牌，多品牌货源，一家店选齐全屋门窗。",
+    "pt2.t": "免费上门测量", "pt2.d": "预约即可上门量尺，方案与报价清楚透明。",
+    "pt3.t": "专业安装售后", "pt3.d": "自有安装团队，交付有标准，售后有人管。",
+    "pt4.t": "深港两地服务", "pt4.d": "服务深圳、香港及广东地区，跨境购门更安心。",
+    "brands.title": "店里挂的两块招牌",
+    "brands.sub": "主推双品牌，同时兼营多个门窗品牌，按需求与预算帮你配齐。",
+    "b1.tag": "智能门 · 入户门", "b1.name": "云鹿智能门",
+    "b1.d": "入户的第一道安心。精雕铝装甲门，搭配智能门锁，人脸、指纹轻松开门，颜值与安防兼得。",
+    "b1.c1": "精雕铝装甲门", "b1.c2": "智能门", "b1.c3": "入户防盗门",
+    "b2.tag": "系统门窗", "b2.name": "暮森门窗",
+    "b2.d": "把阳台交还给光和风。系统封窗、平开窗、推拉窗，隔音隔热，让家安静下来。",
+    "b2.c1": "系统封窗", "b2.c2": "平开窗", "b2.c3": "推拉窗",
+    "prod.title": "产品品类",
+    "prod.sub": "按空间挑门窗，悬停卡片，门会为你打开。",
+    "c1.t": "智能门 · 装甲门", "c1.d": "精雕铝装甲门，智能锁联动，人脸 / 指纹 / 密码开门。",
+    "c2.t": "室内木门", "c2.d": "卧室门、房间门，多种饰面与色板，按家居风格搭配。",
+    "c3.t": "玻璃门 · 推拉门", "c3.d": "极窄边框，通透显大，适合卫生间、厨房与阳台。",
+    "c4.t": "系统封窗", "c4.d": "平开窗、推拉窗、阳台封窗，隔音降噪，安全防护。",
+    "proc.title": "从咨询到装好，四步",
+    "proc.sub": "每一步都有人跟进，不让你操心。",
+    "s1.t": "咨询选型", "s1.d": "到店或微信沟通需求与预算，推荐合适的品牌与款式。",
+    "s2.t": "免费测量", "s2.d": "预约上门量尺，现场评估安装条件，出方案与报价。",
+    "s3.t": "定制生产", "s3.d": "确认方案后下单，工厂按尺寸定制生产。",
+    "s4.t": "安装售后", "s4.d": "专业团队送货安装，验收满意，售后有保障。",
+    "visit.title": "到店看样，<br>摸到实物再决定。",
+    "visit.sub": "展厅常年陈列智能门、木门、玻璃门与系统窗实样，欢迎来店对比。建议来店前先电话或微信预约。",
+    "area.sz": "深圳", "area.hk": "香港", "area.gd": "广东",
+    "visit.phoneLabel": "电话 / 微信同号", "visit.addrLabel": "门店地址",
+    "visit.addr": "广东省深圳市罗湖区笋岗街道 乐安居 L3",
+    "visit.navLabel": "导航提示", "visit.nav": "地图搜索「乐安居 笋岗」即可到店",
+    "visit.callBtn": "一键拨号", "visit.wxBtn": "复制微信号",
+    "foot.name": "云鹿智能门 × 暮森门窗（深圳店）",
+    "foot.addr": "深圳市罗湖区笋岗街道乐安居 L3",
+    "foot.tel": "电话 / 微信",
+    "mb.call": "拨打电话", "mb.wx": "复制微信", "mb.visit": "到店地址",
+    "toast.copied": "微信号已复制：18028723301",
+    "toast.copyFail": "复制失败，微信号：18028723301"
+  },
+
+  "zh-TW": {
+    "brand.name": "雲鹿智能門 × 暮森門窗",
+    "brand.sub": "深圳 · 羅湖 · 樂安居 L3",
+    "nav.brands": "雙品牌", "nav.products": "產品", "nav.process": "服務流程", "nav.visit": "到店", "nav.call": "致電", "nav.shop": "線上商城", "nav.booking": "預約度尺",
+    "prod.shopBtn": "進入線上商城挑選 →",
+    "ps.1": "免費上門度尺", "ps.2": "專業安裝團隊", "ps.3": "質保售後無憂", "ps.4": "深港兩地服務",
+    "hero.kicker": "雲鹿智能門 · 守護每一次歸家",
+    "hero.title": "一扇好門，<br>守一戶安寧。",
+    "hero.sub": "精雕鋁裝甲門與智能鎖聯動，人臉、指紋輕鬆開門——安防與顏值，一門兼得。",
+    "hero.cta1": "探索智能門", "hero.cta2": "微信同號，點擊複製",
+    "hero.note": "電話 / 微信：180 2872 3301 · 羅湖 · 樂安居 L3",
+    "hero.caption": "雲鹿智能門 P50",
+    "sl2.kicker": "暮森門窗 · 系統封窗",
+    "sl2.title": "把露台，<br>還給光和風。",
+    "sl2.sub": "斷橋鋁系統窗，多道密封，隔音隔熱——城市再喧囂，屋企安安靜靜。",
+    "sl2.cta": "探索系統窗", "sl2.cta2": "預約免費度尺", "sl2.caption": "暮森 · 無縫焊接系統窗",
+    "sl3.kicker": "免費上門度尺 · 深港兩地",
+    "sl3.title": "0 元度尺，<br>度完再決定。",
+    "sl3.sub": "預約後師傅上門度尺，現場出方案與報價——不滿意不落單，沒有壓力。",
+    "sl3.cta": "立即預約", "sl3.cta2": "電話諮詢", "sl3.caption": "上門度尺 · 出方案 · 再報價",
+    "col.title": "四大品類", "col.sub": "每一類，都值得一整面牆的展示。",
+    "sc1.tag": "雲鹿 · 智能門", "sc1.title": "智能守護<br>安心歸家",
+    "sc1.sub": "精雕鋁裝甲門體，人臉/指紋智能鎖，遠程可視——門外的世界交給它。", "sc1.cta": "探索產品 →",
+    "sc2.tag": "室內木門", "sc2.title": "靜音降噪<br>靜享生活",
+    "sc2.sub": "實木複合與碳晶飾面，靜音鎖體加密封條——關門很輕，睡眠很沉。", "sc2.cta": "探索產品 →",
+    "sc3.tag": "玻璃門 · 趟門", "sc3.title": "極窄邊框<br>通透顯大",
+    "sc3.sub": "極窄鋁框大視野，雙層鋼化玻璃，順滑靜音路軌——細空間也能好開揚。", "sc3.cta": "探索產品 →",
+    "sc4.tag": "暮森 · 系統封窗", "sc4.title": "隔音隔熱<br>封出一間房",
+    "sc4.sub": "斷橋鋁系統窗，平開/趟窗/轉角定制——露台從此是書房、是花園、是茶室。", "sc4.cta": "探索產品 →",
+    "state.k": "我們的信條",
+    "state.t": "做更好的門窗，<br>給大灣區的每個家。",
+    "state.d": "從深圳到香港，讓更多家庭享受安靜、安全、舒適的居住生活。",
+    "bk.title": "0 元預約度尺",
+    "bk.sub": "填好資料，點擊按鈕，預約內容會自動複製——貼上微信發給我們，或直接打電話，都可以。",
+    "bk.p1": "上門度尺不收費", "bk.p2": "現場出方案與報價", "bk.p3": "不滿意不落單，零壓力",
+    "bk.name": "稱呼", "bk.phone": "聯絡電話", "bk.area": "所在區域",
+    "bk.areaSz": "深圳", "bk.areaHk": "香港", "bk.areaGd": "廣東其他城市",
+    "bk.msg": "需求簡述（選填）",
+    "bk.namePh": "點稱呼您", "bk.phonePh": "方便回電的號碼", "bk.msgPh": "如：兩房一廳換木門 + 封露台",
+    "bk.btn": "生成預約資料，發微信給我們",
+    "bk.hint": "或直接撥打 / 微信：180 2872 3301",
+    "bk.needPhone": "請填寫聯絡電話",
+    "bk.copied": "預約資料已複製，請打開微信貼上發送給 18028723301",
+    "bk.copyFail": "複製失敗，請直接致電 18028723301",
+    "bk.oHead": "【預約免費度尺】", "bk.oName": "稱呼", "bk.oPhone": "電話",
+    "bk.oArea": "區域", "bk.oMsg": "需求",
+    "ft.slogan": "做更好的門窗，給大灣區的每個家。",
+    "ft.products": "產品中心", "ft.cat1": "智能門 · 裝甲門", "ft.cat2": "室內木門",
+    "ft.cat3": "玻璃門 · 趟門", "ft.cat4": "系統封窗",
+    "ft.quick": "快速入口", "ft.book": "0 元預約度尺",
+    "ft.contact": "聯絡我們", "ft.hours": "營業時間：09:00 – 20:00",
+    "mb.book": "預約度尺",
+    "pt1.t": "多品牌一站式", "pt1.d": "雲鹿、暮森雙招牌，多品牌貨源，一家店選齊全屋門窗。",
+    "pt2.t": "免費上門度尺", "pt2.d": "預約即可上門度尺，方案與報價清楚透明。",
+    "pt3.t": "專業安裝售後", "pt3.d": "自有安裝團隊，交付有標準，售後有人跟進。",
+    "pt4.t": "深港兩地服務", "pt4.d": "服務深圳、香港及廣東地區，跨境買門更安心。",
+    "brands.title": "店裡掛的兩塊招牌",
+    "brands.sub": "主推雙品牌，同時兼營多個門窗品牌，按需求與預算幫你配齊。",
+    "b1.tag": "智能門 · 入戶門", "b1.name": "雲鹿智能門",
+    "b1.d": "入戶的第一道安心。精雕鋁裝甲門，搭配智能門鎖，人臉、指紋輕鬆開門，顏值與安防兼得。",
+    "b1.c1": "精雕鋁裝甲門", "b1.c2": "智能門", "b1.c3": "入戶防盜門",
+    "b2.tag": "系統門窗", "b2.name": "暮森門窗",
+    "b2.d": "把露台交還給光和風。系統封窗、平開窗、趟窗，隔音隔熱，讓家安靜下來。",
+    "b2.c1": "系統封窗", "b2.c2": "平開窗", "b2.c3": "趟窗",
+    "prod.title": "產品品類",
+    "prod.sub": "按空間挑門窗，滑鼠移上卡片，門會為你打開。",
+    "c1.t": "智能門 · 裝甲門", "c1.d": "精雕鋁裝甲門，智能鎖聯動，人臉 / 指紋 / 密碼開門。",
+    "c2.t": "室內木門", "c2.d": "睡房門、房間門，多種飾面與色板，按家居風格搭配。",
+    "c3.t": "玻璃門 · 趟門", "c3.d": "極窄邊框，通透顯大，適合浴室、廚房與露台。",
+    "c4.t": "系統封窗", "c4.d": "平開窗、趟窗、露台封窗，隔音降噪，安全防護。",
+    "proc.title": "由諮詢到裝好，四步",
+    "proc.sub": "每一步都有人跟進，不用你操心。",
+    "s1.t": "諮詢選型", "s1.d": "到店或微信溝通需求與預算，推薦合適的品牌與款式。",
+    "s2.t": "免費度尺", "s2.d": "預約上門度尺，現場評估安裝條件，出方案與報價。",
+    "s3.t": "定制生產", "s3.d": "確認方案後落單，工廠按尺寸定制生產。",
+    "s4.t": "安裝售後", "s4.d": "專業團隊送貨安裝，驗收滿意，售後有保障。",
+    "visit.title": "到店睇樣，<br>摸到實物再決定。",
+    "visit.sub": "展廳常年陳列智能門、木門、玻璃門與系統窗實樣，歡迎來店比較。建議來店前先電話或微信預約。",
+    "area.sz": "深圳", "area.hk": "香港", "area.gd": "廣東",
+    "visit.phoneLabel": "電話 / 微信同號", "visit.addrLabel": "門店地址",
+    "visit.addr": "廣東省深圳市羅湖區筍崗街道 樂安居 L3",
+    "visit.navLabel": "導航提示", "visit.nav": "地圖搜尋「樂安居 筍崗」即可到店",
+    "visit.callBtn": "一鍵撥號", "visit.wxBtn": "複製微信號",
+    "foot.name": "雲鹿智能門 × 暮森門窗（深圳店）",
+    "foot.addr": "深圳市羅湖區筍崗街道樂安居 L3",
+    "foot.tel": "電話 / 微信",
+    "mb.call": "撥打電話", "mb.wx": "複製微信", "mb.visit": "到店地址",
+    "toast.copied": "微信號已複製：18028723301",
+    "toast.copyFail": "複製失敗，微信號：18028723301"
+  },
+
+  "en": {
+    "brand.name": "Yunlu Smart Doors × Musen Windows",
+    "brand.sub": "Shenzhen · Luohu · Le'anju L3",
+    "nav.brands": "Brands", "nav.products": "Products", "nav.process": "Process", "nav.visit": "Visit", "nav.call": "Call", "nav.shop": "Online Store", "nav.booking": "Book Measuring",
+    "prod.shopBtn": "Browse the Online Store →",
+    "ps.1": "Free On-Site Measuring", "ps.2": "Professional Installation", "ps.3": "Warranty & After-Sales", "ps.4": "Shenzhen–HK Service",
+    "hero.kicker": "Yunlu Smart Doors · Guarding Every Homecoming",
+    "hero.title": "A fine door<br>guards a quiet home.",
+    "hero.sub": "Carved aluminum armored doors with smart locks — face and fingerprint unlock, security and beauty in one.",
+    "hero.cta1": "Explore Smart Doors", "hero.cta2": "WeChat (same number) — copy",
+    "hero.note": "Phone / WeChat: 180 2872 3301 · Luohu · Le'anju L3",
+    "hero.caption": "Yunlu Smart Door P50",
+    "sl2.kicker": "Musen Windows · System Glazing",
+    "sl2.title": "Give the balcony<br>back to light and air.",
+    "sl2.sub": "Thermal-break aluminum system windows, multi-sealed — however loud the city, home stays quiet.",
+    "sl2.cta": "Explore Windows", "sl2.cta2": "Book Free Measuring", "sl2.caption": "Musen · Seamless-Weld System Window",
+    "sl3.kicker": "Free On-Site Measuring · SZ & HK",
+    "sl3.title": "Measured first,<br>decide after.",
+    "sl3.sub": "We measure on site, then present the plan and quote — no obligation, no pressure.",
+    "sl3.cta": "Book Now", "sl3.cta2": "Call to Ask", "sl3.caption": "Measure · Plan · Quote",
+    "col.title": "Four Collections", "col.sub": "Each one deserves a whole wall of its own.",
+    "sc1.tag": "Yunlu · Smart Doors", "sc1.title": "Smart guarding,<br>safe homecoming",
+    "sc1.sub": "Carved aluminum armored body, face/fingerprint smart lock, remote viewing — leave the outside to it.", "sc1.cta": "Explore →",
+    "sc2.tag": "Interior Wooden Doors", "sc2.title": "Noise down,<br>life quiet",
+    "sc2.sub": "Solid-core and carbon-crystal finishes with silent locks and seals — doors close softly, sleep runs deep.", "sc2.cta": "Explore →",
+    "sc3.tag": "Glass & Sliding Doors", "sc3.title": "Slim frames,<br>open space",
+    "sc3.sub": "Ultra-slim aluminum frames, double tempered glass, smooth silent tracks — small rooms feel bigger.", "sc3.cta": "Explore →",
+    "sc4.tag": "Musen · System Windows", "sc4.title": "Sealed & insulated,<br>a room reclaimed",
+    "sc4.sub": "Thermal-break system windows — casement, sliding, corner units. Your balcony becomes a study, a garden, a tea room.", "sc4.cta": "Explore →",
+    "state.k": "WHAT WE BELIEVE",
+    "state.t": "Better doors and windows,<br>for every home in the Greater Bay.",
+    "state.d": "From Shenzhen to Hong Kong — quieter, safer, more comfortable living for more families.",
+    "bk.title": "Book Free Measuring",
+    "bk.sub": "Fill in the form and tap the button — the booking text is copied for you. Paste it to us on WeChat, or simply call.",
+    "bk.p1": "On-site measuring is free", "bk.p2": "Plan and quote on the spot", "bk.p3": "No obligation, no pressure",
+    "bk.name": "Name", "bk.phone": "Phone", "bk.area": "Area",
+    "bk.areaSz": "Shenzhen", "bk.areaHk": "Hong Kong", "bk.areaGd": "Other Guangdong cities",
+    "bk.msg": "Brief needs (optional)",
+    "bk.namePh": "How should we address you", "bk.phonePh": "Best number to call back", "bk.msgPh": "e.g. replace 3 wooden doors + glaze balcony",
+    "bk.btn": "Generate Booking & Send via WeChat",
+    "bk.hint": "Or call / WeChat: 180 2872 3301",
+    "bk.needPhone": "Please fill in your phone number",
+    "bk.copied": "Booking copied — paste it to 18028723301 on WeChat",
+    "bk.copyFail": "Copy failed — please call 18028723301",
+    "bk.oHead": "[Booking: Free Measuring]", "bk.oName": "Name", "bk.oPhone": "Phone",
+    "bk.oArea": "Area", "bk.oMsg": "Needs",
+    "ft.slogan": "Better doors and windows, for every home in the Greater Bay.",
+    "ft.products": "Products", "ft.cat1": "Smart & Armored Doors", "ft.cat2": "Wooden Doors",
+    "ft.cat3": "Glass & Sliding Doors", "ft.cat4": "System Windows",
+    "ft.quick": "Quick Links", "ft.book": "Free Measuring",
+    "ft.contact": "Contact",
+    "ft.hours": "Hours: 09:00 – 20:00",
+    "mb.book": "Book",
+    "pt1.t": "Multi-Brand, One Stop", "pt1.d": "Two flagship brands plus more — outfit every door and window in one store.",
+    "pt2.t": "Free On-Site Measuring", "pt2.d": "Book a visit and we measure on site, with clear plans and quotes.",
+    "pt3.t": "Pro Install & After-Sales", "pt3.d": "Our own installation team, with standards and real after-sales care.",
+    "pt4.t": "Shenzhen–HK Service", "pt4.d": "Serving Shenzhen, Hong Kong and Guangdong — cross-border made easy.",
+    "brands.title": "The Two Names on Our Sign",
+    "brands.sub": "We champion two flagship brands while carrying several more, matched to your needs and budget.",
+    "b1.tag": "Smart & Entry Doors", "b1.name": "Yunlu Smart Doors",
+    "b1.d": "Your home's first peace of mind. Precision-carved aluminum armored doors with smart locks — face and fingerprint unlock, beauty and security in one.",
+    "b1.c1": "Carved Aluminum Armored", "b1.c2": "Smart Doors", "b1.c3": "Security Entry Doors",
+    "b2.tag": "System Windows", "b2.name": "Musen Doors & Windows",
+    "b2.d": "Give the balcony back to light and air. System glazing, casement and sliding windows that insulate sound and heat.",
+    "b2.c1": "System Glazing", "b2.c2": "Casement Windows", "b2.c3": "Sliding Windows",
+    "prod.title": "Product Range",
+    "prod.sub": "Pick by room — hover a card and the door opens for you.",
+    "c1.t": "Smart & Armored Doors", "c1.d": "Carved aluminum armored doors with smart locks — face, fingerprint or passcode.",
+    "c2.t": "Interior Wooden Doors", "c2.d": "Bedroom and room doors in a wide range of finishes to match your home.",
+    "c3.t": "Glass & Sliding Doors", "c3.d": "Ultra-slim frames that open up space — for bathrooms, kitchens and balconies.",
+    "c4.t": "System Windows", "c4.d": "Casement, sliding and balcony glazing — quieter, safer, better insulated.",
+    "proc.title": "From Enquiry to Installed, in Four Steps",
+    "proc.sub": "Someone follows up at every step, so you never have to chase.",
+    "s1.t": "Consult & Select", "s1.d": "Visit or chat on WeChat about needs and budget; we recommend the right brand and style.",
+    "s2.t": "Free Measuring", "s2.d": "We measure on site, assess installation conditions, then present plan and quote.",
+    "s3.t": "Made to Order", "s3.d": "Once confirmed, the factory builds to your exact dimensions.",
+    "s4.t": "Install & Care", "s4.d": "Professional delivery and installation, with warranty and after-sales support.",
+    "visit.title": "Visit the showroom —<br>decide with your hands.",
+    "visit.sub": "Smart doors, wooden doors, glass doors and system windows are on permanent display. We recommend calling or messaging ahead.",
+    "area.sz": "Shenzhen", "area.hk": "Hong Kong", "area.gd": "Guangdong",
+    "visit.phoneLabel": "Phone / WeChat", "visit.addrLabel": "Showroom Address",
+    "visit.addr": "Le'anju L3, Sungang Sub-district, Luohu, Shenzhen, Guangdong",
+    "visit.navLabel": "Getting Here", "visit.nav": "Search “Le'anju Sungang” (乐安居 笋岗) in your maps app",
+    "visit.callBtn": "Call Now", "visit.wxBtn": "Copy WeChat ID",
+    "foot.name": "Yunlu Smart Doors × Musen Windows (Shenzhen)",
+    "foot.addr": "Le'anju L3, Sungang, Luohu, Shenzhen",
+    "foot.tel": "Phone / WeChat",
+    "mb.call": "Call", "mb.wx": "WeChat", "mb.visit": "Address",
+    "toast.copied": "WeChat ID copied: 18028723301",
+    "toast.copyFail": "Copy failed — WeChat ID: 18028723301"
+  }
+};
+
+const HTML_KEYS = new Set(["hero.title", "visit.title", "sl2.title", "sl3.title",
+  "sc1.title", "sc2.title", "sc3.title", "sc4.title", "state.t"]);
+const LANG_ATTR = { "zh-CN": "zh-CN", "zh-TW": "zh-HK", "en": "en" };
+const WECHAT_ID = "18028723301";
+
+function applyLang(lang) {
+  const dict = I18N[lang] || I18N["zh-CN"];
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (!(key in dict)) return;
+    if (HTML_KEYS.has(key)) el.innerHTML = dict[key];
+    else el.textContent = dict[key];
+  });
+  document.documentElement.setAttribute("data-lang", lang);
+  document.documentElement.setAttribute("lang", LANG_ATTR[lang]);
+  document.title = lang === "en"
+    ? "Yunlu Smart Doors × Musen Windows (Shenzhen)"
+    : dict["foot.name"];
+  document.querySelectorAll(".lang-switch button").forEach(b =>
+    b.classList.toggle("on", b.dataset.setlang === lang));
+  try { localStorage.setItem("lang", lang); } catch (_) {}
+  window.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
+}
+
+function currentLang() {
+  return document.documentElement.getAttribute("data-lang") || "zh-CN";
+}
+
+function switchLang(lang) {
+  document.body.classList.add("lang-fading");
+  setTimeout(() => {
+    applyLang(lang);
+    document.body.classList.remove("lang-fading");
+  }, 180);
+}
+
+document.querySelectorAll(".lang-switch button").forEach(btn =>
+  btn.addEventListener("click", () => switchLang(btn.dataset.setlang)));
+
+(function initLang() {
+  let saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (_) {}
+  if (saved && I18N[saved]) { applyLang(saved); return; }
+  const nav = (navigator.language || "zh-CN").toLowerCase();
+  if (nav.startsWith("en")) applyLang("en");
+  else if (nav.includes("tw") || nav.includes("hk") || nav.includes("hant")) applyLang("zh-TW");
+  else applyLang("zh-CN");
+})();
+
+/* ================= scroll reveal ================= */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+/* ================= wechat copy ================= */
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => t.classList.remove("show"), 2400);
+}
+
+function copyWechat() {
+  const dict = I18N[currentLang()];
+  navigator.clipboard.writeText(WECHAT_ID)
+    .then(() => showToast(dict["toast.copied"]))
+    .catch(() => showToast(dict["toast.copyFail"]));
+}
+
+const wechatBtn = document.getElementById("wechatBtn");
+if (wechatBtn) wechatBtn.addEventListener("click", copyWechat);
+document.querySelectorAll("[data-copy-wechat]").forEach(b =>
+  b.addEventListener("click", copyWechat));
+
+/* ================= footer year ================= */
+document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
+
+/* ================= hero carousel ================= */
+(function initCarousel() {
+  const root = document.getElementById("heroCarousel");
+  if (!root) return;
+  const slides = Array.from(root.querySelectorAll(".slide"));
+  const dotsBox = document.getElementById("carDots");
+  let cur = 0, timer = null;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement("button");
+    d.className = "car-dot" + (i === 0 ? " on" : "");
+    d.setAttribute("aria-label", "slide " + (i + 1));
+    d.addEventListener("click", () => { go(i); restart(); });
+    dotsBox.appendChild(d);
+  });
+  const dots = Array.from(dotsBox.children);
+
+  function go(i) {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle("on", k === cur));
+    dots.forEach((d, k) => d.classList.toggle("on", k === cur));
+  }
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => go(cur + 1), 6000);
+  }
+
+  document.getElementById("carPrev").addEventListener("click", () => { go(cur - 1); restart(); });
+  document.getElementById("carNext").addEventListener("click", () => { go(cur + 1); restart(); });
+  root.addEventListener("mouseenter", () => clearInterval(timer));
+  root.addEventListener("mouseleave", restart);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) restart();
+})();
+
+/* ================= booking form ================= */
+(function initBooking() {
+  const form = document.getElementById("bookingForm");
+  if (!form) return;
+  const dict = () => I18N[currentLang()];
+
+  function updatePh() {
+    const d = dict();
+    document.getElementById("bkName").placeholder = d["bk.namePh"];
+    document.getElementById("bkPhone").placeholder = d["bk.phonePh"];
+    document.getElementById("bkMsg").placeholder = d["bk.msgPh"];
+  }
+  updatePh();
+  window.addEventListener("langchange", updatePh);
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const d = dict();
+    const name = document.getElementById("bkName").value.trim();
+    const phone = document.getElementById("bkPhone").value.trim();
+    const areaSel = document.getElementById("bkArea");
+    const areaKey = { sz: "bk.areaSz", hk: "bk.areaHk", gd: "bk.areaGd" }[areaSel.value];
+    const msg = document.getElementById("bkMsg").value.trim();
+    if (!phone) { showToast(d["bk.needPhone"]); document.getElementById("bkPhone").focus(); return; }
+    const lines = [d["bk.oHead"]];
+    if (name) lines.push(`${d["bk.oName"]}: ${name}`);
+    lines.push(`${d["bk.oPhone"]}: ${phone}`);
+    lines.push(`${d["bk.oArea"]}: ${d[areaKey]}`);
+    if (msg) lines.push(`${d["bk.oMsg"]}: ${msg}`);
+    navigator.clipboard.writeText(lines.join("\n"))
+      .then(() => showToast(d["bk.copied"]))
+      .catch(() => showToast(d["bk.copyFail"]));
+  });
+})();
+
+/* ================= shared API ================= */
+window.SITE = { I18N, applyLang, currentLang, showToast, copyWechat, WECHAT_ID };
+
+</script>
+<script>
+"use strict";
+/* ============ shop i18n (merged into SITE.I18N) ============ */
+(function mergeShopI18n() {
+  const extra = {
+    "zh-CN": {
+      "shop.navHome": "首页",
+      "shop.kicker": "在线商城",
+      "shop.title": "挑好款，发给我们报价。",
+      "shop.sub": "门窗均为定制产品，这里的价格为起步参考价。挑选时填上你的尺寸和颜色偏好，一键生成询价单发微信，我们尽快回复。",
+      "shop.sampleNote": "※ 页面价格为参考价，实际以门店报价为准，欢迎微信咨询。",
+      "shop.all": "全部",
+      "shop.catSmart": "智能门 · 装甲门", "shop.catWood": "室内木门",
+      "shop.catGlass": "玻璃门 · 推拉门", "shop.catWindow": "系统封窗",
+      "shop.from": "起", "shop.perDoor": "/樘", "shop.perSqm": "/㎡",
+      "shop.inStock": "门店现货", "shop.toOrder": "接单定制",
+      "shop.add": "定制并加入清单", "shop.added": "已加入清单",
+      "spec.tag": "定制信息",
+      "spec.hint": "门窗按尺寸定制。方便的话填一下大概尺寸和喜欢的颜色，不确定也没关系，可以留空，到时上门帮你量。",
+      "spec.w": "宽（mm）", "spec.h": "高（mm）",
+      "spec.color": "颜色 / 饰面", "spec.qty": "数量",
+      "spec.note": "其他要求（选填）",
+      "spec.wPh": "如 900", "spec.hPh": "如 2100",
+      "spec.colorPh": "如 胡桃色 / 奶油白", "spec.notePh": "如 带通风窗、左开、需要智能锁",
+      "spec.add": "加入询价清单", "spec.cancel": "取消",
+      "cart.title": "询价清单", "cart.empty": "清单还是空的，去挑几款吧。",
+      "cart.size": "尺寸", "cart.color": "颜色", "cart.noteLabel": "备注",
+      "cart.unfilled": "待量尺",
+      "cart.total": "参考合计",
+      "cart.totalNote": "定制产品，最终价格以上门量尺后的报价为准。",
+      "cart.checkout": "生成询价单，微信发给我们", "cart.clear": "清空清单",
+      "order.title": "询价单已生成",
+      "order.hint": "清单已复制。打开微信，添加好友 18028723301，粘贴发送即可，我们会尽快报价。",
+      "order.copy": "再次复制清单", "order.call": "直接拨打电话", "order.close": "关闭",
+      "order.copied": "询价单已复制", "order.copyFail": "复制失败，请手动全选复制",
+      "mb.cart": "询价清单",
+      "o.head": "【询价单】云鹿智能门 × 暮森门窗",
+      "o.qty": "数量", "o.price": "参考价", "o.size": "尺寸", "o.color": "颜色",
+      "o.note": "备注", "o.sizeTbd": "待上门量尺", "o.total": "参考合计",
+      "o.tail": "麻烦帮我报价，谢谢！", "o.unitDoor": "樘", "o.unitSqm": "㎡"
+    },
+    "zh-TW": {
+      "shop.navHome": "首頁",
+      "shop.kicker": "線上商城",
+      "shop.title": "揀好款，發給我們報價。",
+      "shop.sub": "門窗均為定制產品，這裡的價格為起步參考價。揀選時填上你的尺寸和顏色偏好，一鍵生成詢價單發微信，我們盡快回覆。",
+      "shop.sampleNote": "※ 頁面價格為參考價，實際以門店報價為準，歡迎微信諮詢。",
+      "shop.all": "全部",
+      "shop.catSmart": "智能門 · 裝甲門", "shop.catWood": "室內木門",
+      "shop.catGlass": "玻璃門 · 趟門", "shop.catWindow": "系統封窗",
+      "shop.from": "起", "shop.perDoor": "/樘", "shop.perSqm": "/㎡",
+      "shop.inStock": "門店現貨", "shop.toOrder": "接單定制",
+      "shop.add": "定制並加入清單", "shop.added": "已加入清單",
+      "spec.tag": "定制信息",
+      "spec.hint": "門窗按尺寸定制。方便的話填一下大概尺寸和喜歡的顏色，不確定也沒關係，可以留空，到時上門幫你度。",
+      "spec.w": "闊（mm）", "spec.h": "高（mm）",
+      "spec.color": "顏色 / 飾面", "spec.qty": "數量",
+      "spec.note": "其他要求（選填）",
+      "spec.wPh": "如 900", "spec.hPh": "如 2100",
+      "spec.colorPh": "如 胡桃色 / 奶油白", "spec.notePh": "如 帶通風窗、左開、需要智能鎖",
+      "spec.add": "加入詢價清單", "spec.cancel": "取消",
+      "cart.title": "詢價清單", "cart.empty": "清單還是空的，去揀幾款吧。",
+      "cart.size": "尺寸", "cart.color": "顏色", "cart.noteLabel": "備註",
+      "cart.unfilled": "待度尺",
+      "cart.total": "參考合計",
+      "cart.totalNote": "定制產品，最終價格以上門度尺後的報價為準。",
+      "cart.checkout": "生成詢價單，微信發給我們", "cart.clear": "清空清單",
+      "order.title": "詢價單已生成",
+      "order.hint": "清單已複製。打開微信，添加好友 18028723301，貼上發送即可，我們會盡快報價。",
+      "order.copy": "再次複製清單", "order.call": "直接撥打電話", "order.close": "關閉",
+      "order.copied": "詢價單已複製", "order.copyFail": "複製失敗，請手動全選複製",
+      "mb.cart": "詢價清單",
+      "o.head": "【詢價單】雲鹿智能門 × 暮森門窗",
+      "o.qty": "數量", "o.price": "參考價", "o.size": "尺寸", "o.color": "顏色",
+      "o.note": "備註", "o.sizeTbd": "待上門度尺", "o.total": "參考合計",
+      "o.tail": "麻煩幫我報價，謝謝！", "o.unitDoor": "樘", "o.unitSqm": "㎡"
+    },
+    "en": {
+      "shop.navHome": "Home",
+      "shop.kicker": "Online Store",
+      "shop.title": "Pick your favorites, send us for a quote.",
+      "shop.sub": "Everything is made to order — prices shown are starting references. Add your sizes and color preferences as you pick, then send the enquiry via WeChat.",
+      "shop.sampleNote": "※ Prices are references only — final quotes given in store or via WeChat.",
+      "shop.all": "All",
+      "shop.catSmart": "Smart & Armored", "shop.catWood": "Wooden Doors",
+      "shop.catGlass": "Glass & Sliding", "shop.catWindow": "System Windows",
+      "shop.from": "from", "shop.perDoor": "/door", "shop.perSqm": "/㎡",
+      "shop.inStock": "In Stock", "shop.toOrder": "Made to Order",
+      "shop.add": "Customize & Add", "shop.added": "Added to list",
+      "spec.tag": "Customization",
+      "spec.hint": "Made to your measurements. Rough sizes and color are helpful — but feel free to leave blank, we measure on site anyway.",
+      "spec.w": "Width (mm)", "spec.h": "Height (mm)",
+      "spec.color": "Color / Finish", "spec.qty": "Quantity",
+      "spec.note": "Other requests (optional)",
+      "spec.wPh": "e.g. 900", "spec.hPh": "e.g. 2100",
+      "spec.colorPh": "e.g. walnut / cream white", "spec.notePh": "e.g. vent window, left-hinged, smart lock",
+      "spec.add": "Add to Enquiry", "spec.cancel": "Cancel",
+      "cart.title": "Enquiry List", "cart.empty": "Your list is empty — go pick a few.",
+      "cart.size": "Size", "cart.color": "Color", "cart.noteLabel": "Note",
+      "cart.unfilled": "to be measured",
+      "cart.total": "Reference Total",
+      "cart.totalNote": "Made to order — final price confirmed after on-site measuring.",
+      "cart.checkout": "Generate Enquiry for WeChat", "cart.clear": "Clear List",
+      "order.title": "Enquiry Generated",
+      "order.hint": "The list is copied. Open WeChat, add 18028723301, paste and send — we'll reply with a quote.",
+      "order.copy": "Copy Again", "order.call": "Call Instead", "order.close": "Close",
+      "order.copied": "Enquiry copied", "order.copyFail": "Copy failed — select and copy manually",
+      "mb.cart": "Enquiry",
+      "o.head": "[Enquiry] Yunlu Smart Doors × Musen Windows",
+      "o.qty": "Qty", "o.price": "Ref. price", "o.size": "Size", "o.color": "Color",
+      "o.note": "Note", "o.sizeTbd": "to be measured on site", "o.total": "Reference total",
+      "o.tail": "Please send me a quote, thanks!", "o.unitDoor": "door(s)", "o.unitSqm": "㎡"
+    }
+  };
+  for (const lang of Object.keys(extra)) Object.assign(SITE.I18N[lang], extra[lang]);
+  SITE.applyLang(SITE.currentLang());
+})();
+
+/* ============ state ============ */
+/* cart item: { uid, id, qty, w, h, color, note } — 每次加入都是独立条目,因为定制规格不同 */
+const CART_KEY = "cart-v2";
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch (_) { cart = []; }
+let activeCat = "all";
+let specTarget = null;
+
+const $ = id => document.getElementById(id);
+const t = key => SITE.I18N[SITE.currentLang()][key] || key;
+const money = n => "¥" + n.toLocaleString("zh-CN");
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+
+function saveCart() {
+  try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (_) {}
+}
+
+/* door silhouettes per category */
+const CAT_ART = {
+  smart: `<svg viewBox="0 0 96 170"><rect x="1" y="1" width="94" height="168" fill="var(--paper-raise)" stroke="currentColor" stroke-width="1.2"/><rect x="14" y="16" width="68" height="60" fill="none" stroke="currentColor" stroke-width="0.9"/><rect x="14" y="92" width="68" height="60" fill="none" stroke="currentColor" stroke-width="0.9"/><circle cx="82" cy="85" r="2.6" fill="var(--brass)"/><rect x="40" y="118" width="16" height="22" rx="2" fill="none" stroke="var(--brass)" stroke-width="1.1"/><circle cx="48" cy="129" r="3" fill="none" stroke="var(--brass)" stroke-width="1"/></svg>`,
+  wood: `<svg viewBox="0 0 96 170"><rect x="1" y="1" width="94" height="168" fill="var(--paper-raise)" stroke="currentColor" stroke-width="1.2"/><rect x="14" y="14" width="68" height="40" fill="none" stroke="currentColor" stroke-width="0.9"/><rect x="14" y="64" width="68" height="40" fill="none" stroke="currentColor" stroke-width="0.9"/><rect x="14" y="114" width="68" height="40" fill="none" stroke="currentColor" stroke-width="0.9"/><circle cx="82" cy="85" r="2.6" fill="var(--brass)"/></svg>`,
+  glass: `<svg viewBox="0 0 96 170"><rect x="1" y="1" width="94" height="168" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="48" y1="1" x2="48" y2="169" stroke="currentColor" stroke-width="1"/><line x1="8" y1="40" x2="40" y2="14" stroke="var(--line-strong)" stroke-width="0.8"/><line x1="56" y1="120" x2="88" y2="94" stroke="var(--line-strong)" stroke-width="0.8"/><rect x="44" y="74" width="3.5" height="22" rx="1.75" fill="var(--brass)"/></svg>`,
+  window: `<svg viewBox="0 0 96 170"><rect x="1" y="25" width="94" height="120" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="48" y1="25" x2="48" y2="145" stroke="currentColor" stroke-width="1"/><rect x="7" y="31" width="35" height="108" fill="none" stroke="currentColor" stroke-width="0.8"/><rect x="54" y="31" width="35" height="108" fill="none" stroke="currentColor" stroke-width="0.8"/><line x1="12" y1="60" x2="36" y2="40" stroke="var(--line-strong)" stroke-width="0.8"/><rect x="44" y="74" width="3.5" height="18" rx="1.75" fill="var(--brass)"/></svg>`
+};
+
+/* ============ render products ============ */
+function unitLabel(p) { return p.unit === "sqm" ? t("shop.perSqm") : t("shop.perDoor"); }
+
+function artHTML(p, lang) {
+  return p.img
+    ? `<img src="${p.img}" alt="${esc(p.name[lang])}" loading="lazy">`
+    : CAT_ART[p.cat];
+}
+
+function renderGrid() {
+  const lang = SITE.currentLang();
+  const grid = $("shopGrid");
+  const list = window.PRODUCTS.filter(p => activeCat === "all" || p.cat === activeCat);
+  grid.innerHTML = list.map(p => `
+    <article class="shop-card" data-id="${p.id}">
+      <div class="shop-art">${artHTML(p, lang)}<span class="stock-tag ${p.stock > 0 ? "has" : ""}">${p.stock > 0 ? t("shop.inStock") : t("shop.toOrder")}</span></div>
+      <div class="shop-info">
+        <h3>${p.name[lang]}</h3>
+        <p>${p.desc[lang]}</p>
+        <div class="shop-price">
+          <strong>${money(p.price)}</strong>
+          <span>${t("shop.from")} ${unitLabel(p)}</span>
+        </div>
+        <button class="btn btn-ink add-btn" data-add="${p.id}">${t("shop.add")}</button>
+      </div>
+    </article>`).join("");
+}
+
+/* ============ spec modal ============ */
+function updateSpecPlaceholders() {
+  $("specW").placeholder = t("spec.wPh");
+  $("specH").placeholder = t("spec.hPh");
+  $("specColor").placeholder = t("spec.colorPh");
+  $("specNote").placeholder = t("spec.notePh");
+}
+
+function openSpec(id) {
+  const p = window.PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  specTarget = id;
+  $("specProdName").textContent = p.name[SITE.currentLang()];
+  $("specForm").reset();
+  $("specQty").value = 1;
+  updateSpecPlaceholders();
+  $("specOverlay").classList.add("show");
+  setTimeout(() => $("specW").focus(), 150);
+}
+function closeSpec() {
+  $("specOverlay").classList.remove("show");
+  specTarget = null;
+}
+
+$("specForm").addEventListener("submit", e => {
+  e.preventDefault();
+  if (!specTarget) return;
+  cart.push({
+    uid: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    id: specTarget,
+    qty: Math.max(1, parseInt($("specQty").value, 10) || 1),
+    w: $("specW").value.trim(),
+    h: $("specH").value.trim(),
+    color: $("specColor").value.trim(),
+    note: $("specNote").value.trim()
+  });
+  saveCart(); updateBadges(); renderCart();
+  closeSpec();
+  SITE.showToast(t("shop.added") + " ✓");
+});
+$("specCancel").addEventListener("click", closeSpec);
+$("specOverlay").addEventListener("click", e => {
+  if (e.target === $("specOverlay")) closeSpec();
+});
+
+/* ============ cart ============ */
+function cartQty() { return cart.reduce((s, it) => s + it.qty, 0); }
+
+function updateBadges() {
+  const n = cartQty();
+  $("cartCount").textContent = n;
+  const m = $("cartCountM");
+  if (m) m.textContent = n;
+}
+
+function sizeText(it) {
+  if (it.w && it.h) return `${it.w}×${it.h}mm`;
+  if (it.w) return `W${it.w}mm`;
+  if (it.h) return `H${it.h}mm`;
+  return "";
+}
+
+function renderCart() {
+  const lang = SITE.currentLang();
+  const box = $("cartItems");
+  if (cart.length === 0) {
+    box.innerHTML = `<p class="cart-empty">${t("cart.empty")}</p>`;
+  } else {
+    box.innerHTML = cart.map(it => {
+      const p = window.PRODUCTS.find(x => x.id === it.id);
+      if (!p) return "";
+      const size = sizeText(it) || t("cart.unfilled");
+      return `
+      <div class="cart-item" data-uid="${it.uid}">
+        <div class="cart-item-art">${artHTML(p, lang)}</div>
+        <div class="cart-item-main">
+          <h4>${p.name[lang]}</h4>
+          <div class="cart-item-price">${money(p.price)} <small>${t("shop.from")} ${unitLabel(p)}</small></div>
+          <div class="spec-chips">
+            <span class="spec-chip">${t("cart.size")}: ${esc(size)}</span>
+            ${it.color ? `<span class="spec-chip">${t("cart.color")}: ${esc(it.color)}</span>` : ""}
+          </div>
+          ${it.note ? `<p class="cart-item-note">${t("cart.noteLabel")}: ${esc(it.note)}</p>` : ""}
+          <div class="qty-row">
+            <button class="qty-btn" data-dec="${it.uid}">−</button>
+            <span class="qty-val">${it.qty}</span>
+            <button class="qty-btn" data-inc="${it.uid}">＋</button>
+            <button class="item-del" data-del="${it.uid}">×</button>
+          </div>
+        </div>
+      </div>`;
+    }).join("");
+  }
+  const total = cart.reduce((s, it) => {
+    const p = window.PRODUCTS.find(x => x.id === it.id);
+    return s + (p ? p.price * it.qty : 0);
+  }, 0);
+  $("cartTotal").textContent = money(total);
+}
+
+/* ============ order text ============ */
+function buildOrderText() {
+  const lang = SITE.currentLang();
+  const lines = [t("o.head"), "--------------------------"];
+  cart.forEach((it, i) => {
+    const p = window.PRODUCTS.find(x => x.id === it.id);
+    if (!p) return;
+    const unit = p.unit === "sqm" ? t("o.unitSqm") : t("o.unitDoor");
+    lines.push(`${i + 1}. ${p.name[lang]}`);
+    lines.push(`   ${t("o.size")}: ${sizeText(it) || t("o.sizeTbd")}`);
+    if (it.color) lines.push(`   ${t("o.color")}: ${it.color}`);
+    lines.push(`   ${t("o.qty")}: ${it.qty} ${unit} · ${t("o.price")}: ${money(p.price)}${unitLabel(p)}`);
+    if (it.note) lines.push(`   ${t("o.note")}: ${it.note}`);
+  });
+  const total = cart.reduce((s, it) => {
+    const p = window.PRODUCTS.find(x => x.id === it.id);
+    return s + (p ? p.price * it.qty : 0);
+  }, 0);
+  lines.push("--------------------------");
+  lines.push(`${t("o.total")}: ${money(total)}`);
+  lines.push(t("o.tail"));
+  return lines.join("\n");
+}
+
+/* ============ drawer / modal ============ */
+function openCart() {
+  renderCart();
+  $("cartDrawer").classList.add("open");
+  $("drawerOverlay").classList.add("show");
+}
+function closeCart() {
+  $("cartDrawer").classList.remove("open");
+  $("drawerOverlay").classList.remove("show");
+}
+function openOrder() {
+  if (cart.length === 0) { SITE.showToast(t("cart.empty")); return; }
+  const text = buildOrderText();
+  $("orderText").value = text;
+  $("orderOverlay").classList.add("show");
+  navigator.clipboard.writeText(text)
+    .then(() => SITE.showToast(t("order.copied")))
+    .catch(() => SITE.showToast(t("order.copyFail")));
+}
+function closeOrder() { $("orderOverlay").classList.remove("show"); }
+
+/* ============ events ============ */
+$("shopFilters").addEventListener("click", e => {
+  const btn = e.target.closest("button[data-cat]");
+  if (!btn) return;
+  activeCat = btn.dataset.cat;
+  document.querySelectorAll("#shopFilters button").forEach(b =>
+    b.classList.toggle("on", b === btn));
+  renderGrid();
+});
+
+$("shopGrid").addEventListener("click", e => {
+  const btn = e.target.closest("[data-add]");
+  if (btn) openSpec(btn.dataset.add);
+});
+
+$("cartBtn").addEventListener("click", openCart);
+const mobileCartBtn = $("mobileCartBtn");
+if (mobileCartBtn) mobileCartBtn.addEventListener("click", openCart);
+$("cartClose").addEventListener("click", closeCart);
+$("drawerOverlay").addEventListener("click", closeCart);
+
+$("cartItems").addEventListener("click", e => {
+  const inc = e.target.closest("[data-inc]");
+  const dec = e.target.closest("[data-dec]");
+  const del = e.target.closest("[data-del]");
+  if (inc) { const it = cart.find(x => x.uid === inc.dataset.inc); if (it) it.qty += 1; }
+  else if (dec) {
+    const it = cart.find(x => x.uid === dec.dataset.dec);
+    if (it) { it.qty -= 1; if (it.qty <= 0) cart = cart.filter(x => x !== it); }
+  }
+  else if (del) { cart = cart.filter(x => x.uid !== del.dataset.del); }
+  else return;
+  saveCart(); updateBadges(); renderCart();
+});
+
+$("cartClear").addEventListener("click", () => {
+  cart = []; saveCart(); updateBadges(); renderCart();
+});
+
+$("checkoutBtn").addEventListener("click", openOrder);
+$("orderCopy").addEventListener("click", () => {
+  navigator.clipboard.writeText($("orderText").value)
+    .then(() => SITE.showToast(t("order.copied")))
+    .catch(() => SITE.showToast(t("order.copyFail")));
+});
+$("orderClose").addEventListener("click", closeOrder);
+$("orderOverlay").addEventListener("click", e => {
+  if (e.target === $("orderOverlay")) closeOrder();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") { closeSpec(); closeOrder(); closeCart(); }
+});
+
+window.addEventListener("langchange", () => {
+  renderGrid(); renderCart(); updateSpecPlaceholders();
+  if (specTarget) {
+    const p = window.PRODUCTS.find(x => x.id === specTarget);
+    if (p) $("specProdName").textContent = p.name[SITE.currentLang()];
+  }
+});
+
+/* ============ init ============ */
+document.querySelectorAll("#shopFilters button").forEach(b =>
+  b.classList.toggle("on", b.dataset.cat === activeCat));
+renderGrid();
+renderCart();
+updateBadges();
+
+</script>
+<script>
+
+(function () {
+  function setActiveCat(cat) {
+    if (["smart", "wood", "glass", "window"].indexOf(cat) < 0) cat = "all";
+    activeCat = cat;
+    document.querySelectorAll("#shopFilters button").forEach(function (b) {
+      b.classList.toggle("on", b.dataset.cat === cat);
+    });
+    renderGrid();
+  }
+  function showShop(cat) {
+    document.body.classList.add("in-shop");
+    window.scrollTo(0, 0);
+    setActiveCat(cat || "all");
+  }
+  function showHome(anchor) {
+    document.body.classList.remove("in-shop");
+    if (anchor) {
+      var el = document.getElementById(anchor);
+      if (el) setTimeout(function () { el.scrollIntoView({ behavior: "smooth" }); }, 60);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+  window.showShop = showShop;
+  window.showHome = showHome;
+  document.addEventListener("click", function (e) {
+    var shop = e.target.closest("[data-shop]");
+    if (shop) { e.preventDefault(); showShop(shop.getAttribute("data-shop")); return; }
+    var home = e.target.closest("[data-home]");
+    if (home) { e.preventDefault(); showHome(home.getAttribute("data-home")); return; }
+  });
+})();
+
+</script>
+
+</body>
+</html>
